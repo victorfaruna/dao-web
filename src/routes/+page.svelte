@@ -3,7 +3,7 @@
 	import Header from '$components/Header.svelte';
 </script>
 
-<main class="w-full h-[650px] px-[10%] flex flex-col items-center justify-center">
+<main class="w-full h-[650px] px-[10%] md:px-5 flex flex-col items-center justify-center">
 	<Header />
 	<div class="h-full text-center gap-2 flex flex-col items-center justify-center relative z-[1]">
 		<img
