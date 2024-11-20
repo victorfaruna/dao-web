@@ -13,9 +13,8 @@
 			<li><a href="/">Community</a></li>
 			<li><a href="/">Events</a></li>
 			<li><a href="/">Sponsors</a></li>
-			<li><a href="/">Support</a></li>
 		</ul>
 	</nav>
 
-	<button class="w-[160px] h-[40px] border text-[0.8rem]">Contact Us</button>
+	<button class="w-[160px] h-[40px] border border-color-1/70 text-[0.8rem]">Contact Us</button>
 </header>

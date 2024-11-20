@@ -27,6 +27,7 @@ export default {
 				poppins: ['Poppins', 'sans-serif'],
 				unbounded: 'Unbounded',
 				nunito: ['Nunito', 'sans-serif'],
+				varela: ['Varela Round', 'sans-serif'],
 				'nova-round': 'Nova Round'
 			}
 		}
