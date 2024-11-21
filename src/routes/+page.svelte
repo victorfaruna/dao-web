@@ -8,7 +8,7 @@
 		gsap.fromTo(
 			'.ito1',
 			{
-				y: 20,
+				y: 0,
 				duration: 1,
 				ease: 'power1.inOut'
 			},
@@ -23,12 +23,42 @@
 		gsap.fromTo(
 			'.ito2',
 			{
-				y: 20,
+				y: 0,
 				duration: 1,
 				ease: 'power1.inOut'
 			},
 			{
 				y: -10,
+				duration: 1,
+				rotateZ: -50,
+				ease: 'power1.inOut'
+			}
+		);
+
+		gsap.fromTo(
+			'.ito3',
+			{
+				y: -20,
+				duration: 1,
+				ease: 'power1.inOut'
+			},
+			{
+				y: 10,
+				duration: 1,
+				rotateZ: -50,
+				ease: 'power1.inOut'
+			}
+		);
+
+		gsap.fromTo(
+			'.ito4',
+			{
+				y: -20,
+				duration: 1,
+				ease: 'power1.inOut'
+			},
+			{
+				y: 10,
 				duration: 1,
 				rotateZ: -50,
 				ease: 'power1.inOut'
@@ -54,12 +84,12 @@
 		/>
 		<img
 			src="/images/money.webp"
-			class="size-[40px] absolute bottom-[20px] md:bottom-[30px] right-[-50px] md:right-0"
+			class="ito3 size-[40px] absolute bottom-[20px] md:bottom-[30px] right-[-50px] md:right-0"
 			alt=""
 		/>
 		<img
 			src="/images/binance.webp"
-			class="size-[40px] absolute bottom-[20px] left-[-50px] md:bottom-[30px] md:left-0"
+			class="ito4 size-[40px] absolute bottom-[20px] left-[-50px] md:bottom-[30px] md:left-0"
 			alt=""
 		/>
 
