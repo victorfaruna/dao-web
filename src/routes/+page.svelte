@@ -1,6 +1,40 @@
 <script>
 	// your script goes here
 	import Header from '$components/Header.svelte';
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.fromTo(
+			'.ito1',
+			{
+				y: 20,
+				duration: 1,
+				ease: 'power1.inOut'
+			},
+			{
+				y: -10,
+				duration: 1,
+				rotateZ: 50,
+				ease: 'power1.inOut'
+			}
+		);
+
+		gsap.fromTo(
+			'.ito2',
+			{
+				y: 20,
+				duration: 1,
+				ease: 'power1.inOut'
+			},
+			{
+				y: -10,
+				duration: 1,
+				rotateZ: -50,
+				ease: 'power1.inOut'
+			}
+		);
+	});
 </script>
 
 <main class="w-full h-[650px] px-[10%] md:px-5 flex flex-col items-center justify-center">
@@ -10,12 +44,12 @@
 	>
 		<img
 			src="/images/megaphone.webp"
-			class="size-[70px] absolute top-[20px] left-[-50px] md:top-[30px] md:left-0"
+			class="ito1 size-[70px] absolute top-[20px] left-[-50px] md:top-[30px] md:left-0"
 			alt=""
 		/>
 		<img
 			src="/images/whatever.webp"
-			class="size-[70px] absolute top-[20px] right-[-50px] md:top-[30px] md:right-0"
+			class="ito2 size-[70px] absolute top-[20px] right-[-50px] md:top-[30px] md:right-0"
 			alt=""
 		/>
 		<img
