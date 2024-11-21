@@ -16,12 +16,12 @@ html {
 
 :root[data-theme='dark'] {
 	/* --bg-main: 15, 8, 22; */
-	--bg-main: 25, 25, 25;
+	--bg-main: 2, 2, 2;
 	--color-1: 230, 230, 230;
 	--color-2: 175, 173, 173;
 	--color-3: 142, 91, 199;
 	/* --color-2: 144, 255, 144; */
-	--color-4: 2550, 70, 80;
+	--color-4: 250, 70, 100;
 }
 
 :root body {
@@ -51,7 +51,7 @@ main::before {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.7);
 	backdrop-filter: blur(20px);
 }
 
