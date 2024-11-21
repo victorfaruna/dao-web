@@ -19,14 +19,20 @@
 	<button class="w-[160px] h-[40px] border border-color-1/70 text-[0.7rem] md:hidden">
 		Contact Us
 	</button>
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		fill="none"
-		viewBox="0 0 24 24"
-		stroke-width="1.5"
-		stroke="currentColor"
-		class="size-6 hidden md:block"
+
+	<div
+		class="px-2 py-1 rounded-2xl border border-color-1/70 text-[0.8rem] hidden md:flex gap-1 items-center justify-center"
 	>
-		<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-	</svg>
+		menu
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class="size-6"
+		>
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+		</svg>
+	</div>
 </header>
