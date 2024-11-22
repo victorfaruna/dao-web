@@ -4,15 +4,17 @@
 	import Logo from '$components/Logo.svelte';
 </script>
 
-<header class="w-full h-[100px] flex items-center justify-between z-[1]">
+<header
+	class="w-full h-[100px] flex items-center justify-between absolute top-0 z-[2] px-[10%] md:px-5"
+>
 	<Logo />
 	<nav class="md:hidden">
-		<ul class="flex items-center gap-6 text-[11px] tracking-[0.5px] font-light text-color-1/90">
-			<li><a href="/">Home</a></li>
-			<li><a href="/">About Us</a></li>
-			<li><a href="/">Community</a></li>
-			<li><a href="/">Events</a></li>
-			<li><a href="/">Sponsors</a></li>
+		<ul class="flex items-center gap-6 text-[11px] text-color-1/90">
+			<li><a href="/no">Home</a></li>
+			<li><a href="/all">About</a></li>
+			<li><a href="/yes">Community</a></li>
+			<li><a href="/no">Events</a></li>
+			<li><a href="/all">Sponsors</a></li>
 		</ul>
 	</nav>
 
@@ -21,7 +23,7 @@
 	</button>
 
 	<div
-		class="px-2 py-1 rounded-2xl border border-color-1/70 text-[0.8rem] hidden md:flex gap-1 items-center justify-center"
+		class="px-[0.7rem] py-[0.25rem] rounded-2xl border-[1.5px] border-color-1/90 text-[0.8rem] hidden md:flex gap-1 items-center justify-center"
 	>
 		menu
 		<svg
