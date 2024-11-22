@@ -5,15 +5,39 @@
 	$effect(() => {
 		gsap.from('.tetg', {
 			duration: 1,
-			y: 50,
+			y: 100,
 			ease: 'back.out',
 			stagger: 0.1
+		});
+
+		gsap.from('.chain-img', {
+			duration: 2,
+			x: 200,
+			ease: 'back.out'
+		});
+
+		gsap.to('.chain-img', {
+			duration: 10,
+			repeat: Infinity,
+			rotate: 360,
+			ease: 'none'
+		});
+		gsap.to('.chain-img', {
+			scale: 1.09, // Increase size
+			duration: 0.8, // Duration of the animation
+			repeat: -1, // Infinite loop
+			yoyo: true, // Reverse the animation
+			ease: 'power1.inOut' // Smooth easing
 		});
 	});
 </script>
 
+<br />
+
 <Header />
-<main class="w-full h-[700px] px-[10%] md:px-5 flex md:flex-col items-center justify-center">
+<main
+	class="w-full h-screen sm:h-[650px] px-[10%] md:px-5 flex md:flex-col items-center justify-center"
+>
 	<div
 		class="w-full h-full gap-4 flex flex-col justify-center relative z-[1] md:text-center md:items-center"
 	>
@@ -46,7 +70,11 @@
 		</div>
 	</div>
 
-	<div class="right w-full"></div>
+	<div class="right w-full z-[1] md:hidden flex items-center justify-center">
+		<div class="inner relative">
+			<img src="/images/on_chain.webp" alt="" class="chain-img w-[500px] object-cover" />
+		</div>
+	</div>
 </main>
 
 <style>

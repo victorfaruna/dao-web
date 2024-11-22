@@ -75,8 +75,10 @@ main::before {
 }
 
 @media screen and (min-width: 1800px) {
-	main .inner {
-		width: 1800px !important;
-		margin: 0 auto;
+	header {
+		padding: 0 20% !important;
+	}
+	main {
+		padding: 0 20% !important;
 	}
 }
