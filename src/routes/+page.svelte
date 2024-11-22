@@ -6,6 +6,7 @@
 		gsap.from('.tetg', {
 			duration: 1,
 			y: 50,
+			ease: 'back.out',
 			stagger: 0.1
 		});
 	});
