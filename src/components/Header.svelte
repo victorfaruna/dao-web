@@ -11,7 +11,6 @@
 	<nav class="md:hidden">
 		<ul class="flex items-center gap-6 text-[11px] text-color-1/90">
 			<li><a href="/no">Home</a></li>
-			<li><a href="/all">About</a></li>
 			<li><a href="/yes">Community</a></li>
 			<li><a href="/no">Events</a></li>
 			<li><a href="/all">Sponsors</a></li>
