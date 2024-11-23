@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// your script goes here
 	import Header from '$components/Header.svelte';
 	import { gsap } from 'gsap';
@@ -30,23 +30,42 @@
 			ease: 'power1.inOut' // Smooth easing
 		});
 	});
+
+	let cursor: HTMLElement;
+
+	$effect(() => {
+		document.addEventListener('mousemove', function (e) {
+			cursor.setAttribute('style', `left: ${e.pageX - 15}px; top: ${e.pageY - 15}px`);
+		});
+
+		return () => {
+			document.removeEventListener('mousemove', function (e) {
+				cursor.setAttribute('style', `left: ${e.pageX - 15}px; top: ${e.pageY - 15}px`);
+			});
+		};
+	});
 </script>
 
-<br />
+<div
+	bind:this={cursor}
+	class="cursor size-[30px] border rounded-full bg-transparent absolute z-[999] pointer-events-none duration-[0.1s] ease-out animate-bounce"
+>
+	<!-- <img src="/images/cursor.svg" alt="" class="w-[30px] h-[30px]" /> -->
+</div>
 
 <Header />
 <main
-	class="w-full h-screen sm:h-[650px] px-[10%] md:px-5 flex md:flex-col items-center justify-center"
+	class="w-full h-screen sm:h-[650px] px-[10%] md:px-5 flex flex-col items-center justify-center"
 >
 	<div
-		class="w-full h-full gap-4 flex flex-col justify-center relative z-[1] md:text-center md:items-center"
+		class="w-full h-full gap-4 flex flex-col justify-center relative z-[1] text-center items-center"
 	>
 		<p
 			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[3px]"
 		>
 			Nigeria's Largest
 		</p>
-		<p class="tetg text-[4rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
+		<p class="tetg text-[5rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
 				class="size-[70px] md:size-[35px] inline mr-[-12px] md:mr-[-4px]"
@@ -71,13 +90,15 @@
 	</div>
 
 	<div class="right w-full z-[1] md:hidden flex items-center justify-center">
-		<div class="inner relative">
+		<!-- <div class="inner relative">
 			<img src="/images/on_chain.webp" alt="" class="chain-img w-[500px] object-cover" />
-		</div>
+		</div> -->
 	</div>
 </main>
 
 <style>
+	.cursor {
+	}
 	/* .sub-text {
 		font-size: 5rem;
 	}
