@@ -48,7 +48,7 @@
 
 <div
 	bind:this={cursor}
-	class="cursor size-[30px] border rounded-full bg-transparent absolute z-[999] pointer-events-none duration-[0.1s] ease-out animate-bounce"
+	class="cursor size-[30px] border rounded-full bg-transparent absolute z-[999] pointer-events-none duration-[0.1s] ease-out"
 >
 	<!-- <img src="/images/cursor.svg" alt="" class="w-[30px] h-[30px]" /> -->
 </div>
