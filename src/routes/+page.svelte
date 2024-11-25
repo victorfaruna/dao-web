@@ -5,44 +5,31 @@
 	$effect(() => {
 		gsap.from('.tetg', {
 			duration: 1,
-			y: 100,
-			ease: 'back.out',
+			y: 60,
+			ease: 'power1.inOut',
 			stagger: 0.1
 		});
 
-		gsap.from('.chain-img', {
-			duration: 2,
-			x: 200,
-			ease: 'back.out'
-		});
-
-		gsap.to('.chain-img', {
-			duration: 10,
-			repeat: Infinity,
-			rotate: 360,
-			ease: 'none'
-		});
-		gsap.to('.chain-img', {
-			scale: 1.09, // Increase size
-			duration: 0.8, // Duration of the animation
-			repeat: -1, // Infinite loop
-			yoyo: true, // Reverse the animation
-			ease: 'power1.inOut' // Smooth easing
+		gsap.from('.kuk', {
+			duration: 1,
+			x: 60,
+			ease: 'power1.inOut',
+			stagger: 0.1
 		});
 	});
 </script>
 
 <Header />
 <main
-	class="w-full h-screen sm:h-[650px] px-[10%] md:px-5 flex flex-col items-center justify-center"
+	class="w-full h-screen md:h-[600px] bg-[url('/images/main-bg-9.webp')] bg-cover bg-no-repeat px-[10%] md:px-5 relative flex gap-10 items-center justify-center"
 >
-	<div class="w-full h-full gap-4 flex flex-col justify-center text-center items-center">
+	<div class="w-full h-full gap-4 flex flex-col justify-center relative z-[1]">
 		<p
-			class="tetg font-bold text-[1.2rem] md:text-[0.8rem] text-color-3 font-varela uppercase tracking-[3px]"
+			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[3px]"
 		>
 			Nigeria's Largest
 		</p>
-		<p class="tetg text-[5rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
+		<p class="tetg text-[4rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
 				class="size-[65px] md:size-[30px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
@@ -51,7 +38,9 @@
 				>a</span
 			>i<span class="sub-text">n</span>
 		</p>
-		<p class="tetg text-[1.5rem] md:text-[1rem] font-normal font-unbounded leading-none">
+		<p
+			class="tetg text-[1.5rem] md:text-[0.8rem] text-color-1 font-normal font-unbounded leading-none"
+		>
 			Community & <span class="text-color-4 font-bold">Hangout Event</span> in Ekiti&nbsp;<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
@@ -72,19 +61,17 @@
 				/>
 			</svg>
 		</p>
-		<p class="tetg text-color-1/60 text-[0.7rem] md:text-[0.7rem] font-light">
-			Join JOJI DAO: a groundbreaking event connecting technology and Web3 innovation.
+		<p class="tetg text-color-1/70 text-[0.7rem] md:text-[0.7rem] font-light">
+			Join JOJI DAO: a groundbreaking event connecting <br /> technology and Web3 innovation.
 		</p>
 
-		<div
-			class="tetg buttons text-[0.7rem] font-medium font-unbounded flex gap-2 flex-wrap justify-center"
-		>
+		<div class="tetg buttons text-[0.7rem] font-medium font-unbounded flex gap-2 flex-wrap">
 			<button
-				class="h-[40px] rounded-full px-4 text-color-1 flex gap-2 items-center justify-center bg-gradient-to-r from-color-3 to-color-4"
+				class="h-[40px] rounded-fulll px-4 text-color-1 flex gap-2 items-center justify-center bg-color-4"
 				>Prizes & Giveaways 🎁</button
 			>
 			<button
-				class="h-[40px] rounded-full border-[1px] border-color-3 bg-main px-6 text-color-1 flex gap-2 items-center justify-center"
+				class="h-[40px] rounded-fulll bg-color-3 px-6 text-color-1 flex gap-2 items-center justify-center"
 				>Join Us<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -103,15 +90,33 @@
 		</div>
 	</div>
 
-	<div class="right w-full z-[1] md:hidden flex items-center justify-center">
-		<!-- <div class="inner relative">
-			<img src="/images/on_chain.webp" alt="" class="chain-img w-[500px] object-cover" />
-		</div> -->
+	<div class="right w-full z-[1] md:hidden flex items-center justify-center flex-wrap gap-10">
+		<img
+			class="kuk w-[220px] h-[320px] rounded-full object-cover"
+			src="/images/digiboy.webp"
+			alt=""
+		/>
+		<img class="kuk size-[150px] rounded-full object-cover" src="/images/msg.jpeg" alt="" />
+		<br />
+		<img class="kuk size-[100px] rounded-full object-cover" src="/images/bulb.jpeg" alt="" />
 	</div>
 </main>
 
 <style>
-	/* .sub-text {
+	main::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		backdrop-filter: blur(25px);
+	}
+
+	/*
+	
+	.sub-text {
 		font-size: 5rem;
 	}
 

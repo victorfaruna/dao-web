@@ -17,7 +17,9 @@
 		</ul>
 	</nav>
 
-	<button class="w-[160px] h-[40px] border border-color-1/70 text-[0.7rem] md:hidden">
+	<button
+		class="w-[160px] h-[40px] border border-color-1/70 rounded-[2.5rem] text-[0.7rem] md:hidden"
+	>
 		Contact Us
 	</button>
 
