@@ -15,27 +15,21 @@ html {
 }
 
 :root[data-theme='dark'] {
-	--bg-main: 5, 5, 5;
+	--bg-main: 0, 0, 0;
 	--color-1: 230, 230, 230;
 	--color-2: 175, 173, 173;
 	--color-3: 142, 91, 199;
 	--color-4: 250, 70, 100;
+	overflow-x: hidden;
 }
 
 :root body {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 	font-family: 'Poppins', sans-serif;
 	color: rgba(var(--color-1));
-	background-color: rgba(var(--bg-main));
+	background-color: rgb(var(--bg-main));
 	font-size: 12px;
-	cursor: none;
-
-	/* background-image: radial-gradient(rgba(var(--color-1), 0.05) 2px, transparent 0);
-	background-position: -5px -5px;
-	background-size: 30px 30px; */
-}
-
-*:hover {
-	cursor: none;
 }
 
 * {

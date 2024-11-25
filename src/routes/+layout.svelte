@@ -23,10 +23,10 @@
 	});
 </script>
 
-<div
+<!-- <div
 	bind:this={cursor}
 	class="xl:hidden cursor size-[30px] rounded-full bg-transparent absolute z-[999] pointer-events-none"
 >
 	<img src="/images/cursor.svg" alt="" class="w-[30px] h-[30px]" />
-</div>
+</div> -->
 {@render children()}
