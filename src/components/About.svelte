@@ -1,4 +1,33 @@
-<div class="cont w-full flex gap-10">
-	<div class="left w-full"></div>
-	<div class="right w-full"></div>
+<div class="w-full px-[10%] md:px-8 flex md:flex-col-reverse gap-10 font-orbitron">
+	<div class="left w-[40%] md:w-full flex justify-center">
+		<div class="img relative w-[350px] h-[450px] p-1 xl:w-[80%]">
+			<img src="/images/cana.jpeg" class="mask mask-hexagon size-full object-cover" alt="" />
+		</div>
+	</div>
+	<div class="right w-[60%] md:w-full flex flex-col gap-5">
+		<p class="text-color-1 text-[3rem] md:text-[2rem] text-orange-300 font-bold">
+			About <br />Joji Dao
+		</p>
+		<p class="text-[0.9rem] md:text-[0.7rem] font-sora">
+			Joji Dao is a community that is built for helping Crypto projects grow in Nigeria by hosting
+			IRL events and online community development. <br /><br />The first active Crypto community in
+			Ekiti State built for onboarding and empowering individuals in Crypto and Web3. <br /><br />We
+			are also passionate about helping Crypto projects reach their full potential across many
+			Nigeria regions.
+		</p>
+	</div>
 </div>
+
+<style>
+	.img::before {
+		@apply mask mask-hexagon;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: linear-gradient(180deg, rgb(var(--color-3)), rgb(var(--color-4)));
+	}
+</style>

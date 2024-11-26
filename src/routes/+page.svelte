@@ -2,6 +2,7 @@
 	// your script goes here
 	import Header from '$components/Header.svelte';
 	import About from '$components/About.svelte';
+	import Footer from '$components/Footer.svelte';
 	import { gsap } from 'gsap';
 	$effect(() => {});
 </script>
@@ -11,7 +12,7 @@
 	class="w-full h-screen md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
-		class="w-[60%] md:w-full h-full md:h-[450px] md:pt-[50px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
+		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
 	>
 		<p
 			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-orbitron uppercase tracking-[4px]"
@@ -91,3 +92,4 @@
 	</div>
 </main>
 <About />
+<Footer />

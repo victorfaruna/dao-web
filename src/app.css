@@ -16,7 +16,7 @@ html {
 
 :root[data-theme='dark'] {
 	--bg-main: 20, 20, 25;
-	--color-1: 230, 230, 230;
+	--color-1: 250, 250, 250;
 	--color-2: 175, 173, 173;
 	--color-3: 142, 91, 199;
 	--color-4: 255, 70, 100;
@@ -37,7 +37,8 @@ html {
 }
 :root body::before {
 	content: '';
-	position: absolute;
+	position: fixed;
+	z-index: -1;
 	top: 0;
 	left: 0;
 	width: 100%;

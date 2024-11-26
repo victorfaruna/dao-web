@@ -13,6 +13,7 @@
 	>
 		<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
 			<li class="relative active"><a href="/">Home</a></li>
+			<li class="relative"><a href="/about">About</a></li>
 			<li class="relative"><a href="/community">Community</a></li>
 			<li class="relative"><a href="/events">Events</a></li>
 			<li class="relative"><a href="/sponsors">Sponsors</a></li>
@@ -20,7 +21,7 @@
 	</nav>
 
 	<button
-		class="w-[155px] h-[37px] bg-gradient-to-r from-color-4/80 to-color-3/70 rounded-xl text-[0.7rem] md:hidden"
+		class="w-[155px] h-[37px] bg-gradient-to-r from-color-4/80 to-color-3/70 rounded-md text-[0.7rem] md:hidden"
 	>
 		Contact Us
 	</button>
