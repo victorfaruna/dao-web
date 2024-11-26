@@ -72,6 +72,9 @@ html {
 	background: #555;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
 @media screen and (min-width: 1800px) {
 	header {
 		padding: 0 20% !important;

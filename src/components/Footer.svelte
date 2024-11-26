@@ -1,4 +1,4 @@
-<footer class="w-full px-[8%] md:px-8 flex flex-col gap-10 font-sora">
+<footer class="w-full mt-20 px-[8%] md:px-8 flex flex-col gap-10 font-sora">
 	<div class="top flex gap-[5%] md:flex-col md:gap-10">
 		<div class="category flex flex-col gap-2">
 			<p class="title">About Us</p>

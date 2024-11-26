@@ -4,9 +4,7 @@
 	import Logo from '$components/Logo.svelte';
 </script>
 
-<header
-	class="w-full h-[100px] flex items-center justify-between absolute top-0 z-[2] px-[10%] md:px-7"
->
+<header class="w-full h-[100px] flex items-center justify-between absolute top-0 px-[10%] md:px-7">
 	<Logo />
 	<nav
 		class="rounded-full bg-color-1/10 backdrop-blur-[10px] px-10 drop-shadow-2xl border border-color-1/15 py-3 md:hidden"

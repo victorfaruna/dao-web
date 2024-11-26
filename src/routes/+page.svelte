@@ -3,6 +3,8 @@
 	import Header from '$components/Header.svelte';
 	import About from '$components/About.svelte';
 	import Footer from '$components/Footer.svelte';
+	import Purpose from '$src/components/Purpose.svelte';
+	import Overview from '$src/components/Overview.svelte';
 </script>
 
 <Header />
@@ -90,4 +92,6 @@
 	</div>
 </main>
 <About />
+<Overview />
+<Purpose />
 <Footer />
