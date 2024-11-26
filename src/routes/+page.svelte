@@ -20,7 +20,7 @@
 		});
 		gsap.to('.kuk1', {
 			rotate: -360,
-			duration: 10,
+			duration: 2,
 			repeat: -1,
 			ease: 'none'
 		});
@@ -111,10 +111,10 @@
 	</div>
 
 	<div
-		class="right w-[40%] relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
+		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
 		<img class="kuk kuk1 size-full object-contain" src="/images/bg-twurl.png" alt="" />
-		<img class="kuk kuk2 size-[80%] object-contain absolute" src="/images/wwh.png" alt="" />
+		<img class="kuk kuk2 size-[60%] object-contain absolute" src="/images/wwh.png" alt="" />
 	</div>
 </main>
 <About />
