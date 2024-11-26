@@ -5,6 +5,32 @@
 	import Footer from '$components/Footer.svelte';
 	import Purpose from '$src/components/Purpose.svelte';
 	import Overview from '$src/components/Overview.svelte';
+	import gsap from 'gsap';
+	$effect(() => {
+		gsap.to('.kuk1', {
+			rotate: 20,
+			duration: 2,
+			ease: 'power1.Out'
+		});
+		gsap.from('.kuk', {
+			x: 100,
+			duration: 1,
+			stagger: 0.2,
+			ease: 'power1.Out'
+		});
+		gsap.to('.kuk1', {
+			rotate: -360,
+			duration: 10,
+			repeat: -1,
+			ease: 'none'
+		});
+		gsap.to('.kuk2', {
+			rotate: 360,
+			duration: 10,
+			repeat: -1,
+			ease: 'none'
+		});
+	});
 </script>
 
 <Header />
@@ -87,8 +113,8 @@
 	<div
 		class="right w-[40%] relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
-		<img class="kuk kuk3 size-full object-contain" src="/images/bg-twurl.png" alt="" />
-		<img class="kuk kuk3 size-[80%] object-contain absolute" src="/images/wwh.png" alt="" />
+		<img class="kuk kuk1 size-full object-contain" src="/images/bg-twurl.png" alt="" />
+		<img class="kuk kuk2 size-[80%] object-contain absolute" src="/images/wwh.png" alt="" />
 	</div>
 </main>
 <About />
