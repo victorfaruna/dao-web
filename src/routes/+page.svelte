@@ -14,7 +14,7 @@
 		class="w-[60%] md:w-full h-full md:h-[450px] md:pt-[50px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
 	>
 		<p
-			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[4px]"
+			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-orbitron uppercase tracking-[4px]"
 		>
 			The Largest
 		</p>
@@ -83,23 +83,11 @@
 		</div>
 	</div>
 
-	<div class="right w-[40%] md:w-full z-[1] flex items-center justify-center flex-wrap gap-3">
-		<img
-			class="tronut kuk kuk1 w-[200px] h-[250px] rounded-full object-cover xl:w-[170px] xl:h-[200px]"
-			src="/images/digiboy.webp"
-			alt=""
-		/>
-		<img
-			class="kuk kuk2 mask mask-squircle size-[150px] object-cover xl:size-[100px]"
-			src="/images/rocket-2.jpeg"
-			alt=""
-		/>
-		<img
-			class="kuk kuk3 mask mask-hexagon size-[140px] xl:size-[90px] rounded-full object-contain"
-			style="flex-basis: 100%"
-			src="/images/locked.jpeg"
-			alt=""
-		/>
+	<div
+		class="right w-[40%] relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
+	>
+		<img class="kuk kuk3 size-full object-contain" src="/images/bg-twurl.png" alt="" />
+		<img class="kuk kuk3 size-[80%] object-contain absolute" src="/images/wwh.png" alt="" />
 	</div>
 </main>
 <About />
