@@ -25,7 +25,8 @@ export default {
 				'color-4': 'rgba(var(--color-4))'
 			},
 			fontFamily: {
-				poppins: ['Poppins', 'sans-serif'],
+				sora: ['Sora', 'sans-serif'],
+				orbitron: 'Orbitron',
 				unbounded: 'Unbounded',
 				nunito: ['Nunito', 'sans-serif'],
 				varela: ['Varela Round', 'sans-serif'],

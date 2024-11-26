@@ -5,7 +5,7 @@
 </script>
 
 <header
-	class="w-full h-[100px] flex items-center justify-between absolute top-0 z-[2] px-[10%] md:px-5"
+	class="w-full h-[100px] flex items-center justify-between absolute top-0 z-[2] px-[10%] md:px-7"
 >
 	<Logo />
 	<nav class="md:hidden">

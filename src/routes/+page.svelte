@@ -1,6 +1,7 @@
 <script lang="ts">
 	// your script goes here
 	import Header from '$components/Header.svelte';
+	import About from '$components/About.svelte';
 	import { gsap } from 'gsap';
 	$effect(() => {
 		gsap.from('.tetg', {
@@ -24,7 +25,7 @@
 	class="w-full h-screen md:h-auto bg-[url('/images/main-bg-9.webp')] bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
-		class="w-full h-full md:h-[500px] md:pt-[50px] gap-4 flex flex-col justify-center md:items-center relative z-[1]"
+		class="w-full h-full md:h-[450px] md:pt-[50px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
 	>
 		<p
 			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[3px]"
@@ -68,7 +69,7 @@
 		</p>
 
 		<div
-			class="tetg buttons text-[0.7rem] font-medium font-unbounded flex gap-2 flex-wrap md:justify-center"
+			class="tetg buttons text-[0.7rem] font-bold font-orbitron flex gap-2 flex-wrap md:justify-center"
 		>
 			<button
 				class="h-[40px] md:rounded-full px-4 text-color-1 flex gap-2 items-center justify-center bg-color-4"
@@ -96,7 +97,7 @@
 
 	<div class="right w-full z-[1] flex items-center justify-center flex-wrap gap-5">
 		<img
-			class="tronut kuk w-[220px] h-[300px] rounded-full object-cover xl:w-[170px] xl:h-[230px]"
+			class="tronut kuk w-[220px] h-[300px] rounded-full object-cover xl:w-[170px] xl:h-[200px]"
 			src="/images/digiboy.webp"
 			alt=""
 		/>
@@ -106,13 +107,15 @@
 			alt=""
 		/>
 		<img
-			class="kuk mask mask-hexagon size-[140px] rounded-full object-contain"
+			class="kuk mask mask-hexagon size-[140px] xl:size-[90px] rounded-full object-contain"
 			style="flex-basis: 100%"
 			src="/images/locked.jpeg"
 			alt=""
 		/>
 	</div>
 </main>
+
+<About />
 
 <style>
 	main::before {
