@@ -8,18 +8,16 @@
 	class="w-full h-[100px] flex items-center justify-between absolute top-0 z-[2] px-[10%] md:px-7"
 >
 	<Logo />
-	<nav class="md:hidden">
-		<ul class="flex items-center gap-6 text-[11px] text-color-1/90">
-			<li><a href="/no">Home</a></li>
-			<li><a href="/yes">Community</a></li>
-			<li><a href="/no">Events</a></li>
-			<li><a href="/all">Sponsors</a></li>
+	<nav class="rounded-full bg-color-1/10 backdrop-blur-[10px] px-10 drop-shadow-2xl py-3 md:hidden">
+		<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
+			<li class="relative active"><a href="/">Home</a></li>
+			<li class="relative"><a href="/community">Community</a></li>
+			<li class="relative"><a href="/events">Events</a></li>
+			<li class="relative"><a href="/sponsors">Sponsors</a></li>
 		</ul>
 	</nav>
 
-	<button
-		class="w-[160px] h-[40px] border border-color-1/70 rounded-[2.5rem] text-[0.7rem] md:hidden"
-	>
+	<button class="w-[155px] h-[37px] border border-color-1/70 text-[0.7rem] md:hidden">
 		Contact Us
 	</button>
 
@@ -39,3 +37,16 @@
 		</svg>
 	</div>
 </header>
+
+<style>
+	nav li.active::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: calc(50% - 1.5px);
+		width: 3px;
+		height: 3px;
+		border-radius: 20px;
+		background: rgba(var(--color-1), 0.7);
+	}
+</style>

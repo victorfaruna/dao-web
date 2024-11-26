@@ -3,36 +3,22 @@
 	import Header from '$components/Header.svelte';
 	import About from '$components/About.svelte';
 	import { gsap } from 'gsap';
-	$effect(() => {
-		gsap.from('.tetg', {
-			duration: 1,
-			y: 60,
-			ease: 'power1.inOut',
-			stagger: 0.1
-		});
-
-		gsap.from('.kuk', {
-			duration: 1,
-			x: 120,
-			ease: 'power1.inOut',
-			stagger: 0.1
-		});
-	});
+	$effect(() => {});
 </script>
 
 <Header />
 <main
-	class="w-full h-screen md:h-auto bg-[url('/images/main-bg-9.webp')] bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-screen md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
-		class="w-full h-full md:h-[450px] md:pt-[50px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
+		class="w-[60%] md:w-full h-full md:h-[450px] md:pt-[50px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
 	>
 		<p
-			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[3px]"
+			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-varela uppercase tracking-[4px]"
 		>
-			Nigeria's Largest
+			The Largest
 		</p>
-		<p class="tetg text-[4rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
+		<p class="tetg text-[4rem] md:text-[2.2rem] font-orbitron font-bold leading-none uppercase">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
 				class="size-[65px] md:size-[30px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
@@ -69,74 +55,51 @@
 		</p>
 
 		<div
-			class="tetg buttons text-[0.7rem] font-bold font-orbitron flex gap-2 flex-wrap md:justify-center"
+			class="tetg buttons text-[0.7rem] font-bold font-orbitron tracking-[0.5px] flex gap-2 flex-wrap md:justify-center"
 		>
 			<button
-				class="h-[40px] md:rounded-full px-4 text-color-1 flex gap-2 items-center justify-center bg-color-4"
+				class="h-[40px] rounded-full px-4 text-color-1 flex gap-2 items-center justify-center bg-gradient-to-r from-color-4 to-color-3/50"
 				>Prizes & Giveaways 🎁</button
 			>
 			<button
-				class="h-[40px] md:rounded-full bg-color-3 px-6 text-color-1 flex gap-2 items-center justify-center"
-				>Join Us<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="size-6"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-					/>
-				</svg>
+				class="h-[40px] rounded-full border border-color-3 overflow-hidden pl-6 text-color-1 flex gap-2 items-center justify-center"
+				>Join Us <span class="size-[40px] rounded-full bg-color-3 flex items-center justify-center">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="size-4"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+						/>
+					</svg>
+				</span>
 			</button>
 		</div>
 	</div>
 
-	<div class="right w-full z-[1] flex items-center justify-center flex-wrap gap-5">
+	<div class="right w-[40%] md:w-full z-[1] flex items-center justify-center flex-wrap gap-3">
 		<img
-			class="tronut kuk w-[220px] h-[300px] rounded-full object-cover xl:w-[170px] xl:h-[200px]"
+			class="tronut kuk kuk1 w-[200px] h-[250px] rounded-full object-cover xl:w-[170px] xl:h-[200px]"
 			src="/images/digiboy.webp"
 			alt=""
 		/>
 		<img
-			class="kuk mask mask-squircle size-[150px] object-cover xl:size-[100px]"
+			class="kuk kuk2 mask mask-squircle size-[150px] object-cover xl:size-[100px]"
 			src="/images/rocket-2.jpeg"
 			alt=""
 		/>
 		<img
-			class="kuk mask mask-hexagon size-[140px] xl:size-[90px] rounded-full object-contain"
+			class="kuk kuk3 mask mask-hexagon size-[140px] xl:size-[90px] rounded-full object-contain"
 			style="flex-basis: 100%"
 			src="/images/locked.jpeg"
 			alt=""
 		/>
 	</div>
 </main>
-
 <About />
-
-<style>
-	main::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.7);
-		backdrop-filter: blur(25px);
-	}
-
-	/*
-	.sub-text {
-		font-size: 5rem;
-	}
-
-	@media (max-width: 768px) {
-		.sub-text {
-			font-size: 1.8rem;
-		}
-	} */
-</style>
