@@ -3,8 +3,6 @@
 	import Header from '$components/Header.svelte';
 	import About from '$components/About.svelte';
 	import Footer from '$components/Footer.svelte';
-	import { gsap } from 'gsap';
-	$effect(() => {});
 </script>
 
 <Header />

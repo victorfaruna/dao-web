@@ -1,12 +1,14 @@
 <div class="w-full px-[10%] md:px-8 flex md:flex-col-reverse gap-10 font-orbitron">
 	<div class="left w-[40%] md:w-full flex justify-center">
-		<div class="img relative w-[350px] h-[450px] p-1 xl:w-[80%]">
+		<div class="img relative w-[350px] h-[450px] p-[0.18rem] xl:w-[80%]">
 			<img src="/images/cana.jpeg" class="mask mask-hexagon size-full object-cover" alt="" />
 		</div>
 	</div>
 	<div class="right w-[60%] md:w-full flex flex-col gap-5">
 		<p class="text-color-1 text-[3rem] md:text-[2rem] text-orange-300 font-bold">
-			About <br />Joji Dao
+			About <img class="inline w-[100px]" src="/images/coooo.svg" alt="" /> <br /><span
+				class="text-[2.5rem]">Joji Dao</span
+			>
 		</p>
 		<p class="text-[0.9rem] md:text-[0.7rem] font-sora">
 			Joji Dao is a community that is built for helping Crypto projects grow in Nigeria by hosting
