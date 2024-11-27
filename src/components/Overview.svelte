@@ -46,6 +46,19 @@
 			</p>
 		</div>
 	</div>
+
+	<div
+		class="item relative overflow-hidden w-[30%] md:w-[80%] h-full rounded-[2rem] bg-[url(/images/rd-games.webp)] bg-cover bg-no-repeat flex flex-col justify-end"
+		style="flex: 0 0 auto"
+	>
+		<div class="inner w-full p-5 flex flex-col gap-4 relative z-[2]">
+			<p class="title">Raffle Draw and Games</p>
+			<p class="desc">
+				Join the fun at JOJI DAO with thrilling games and raffle draws! Win amazing prizes and
+				connect with the community in an atmosphere of excitement and innovation.
+			</p>
+		</div>
+	</div>
 </div>
 
 <style>

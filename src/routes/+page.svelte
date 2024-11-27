@@ -18,18 +18,18 @@
 			stagger: 0.2,
 			ease: 'power1.Out'
 		});
-		gsap.to('.kuk1', {
-			rotate: -360,
+		gsap.to('.kuk3', {
+			rotateY: -360,
 			duration: 2,
 			repeat: -1,
 			ease: 'none'
 		});
-		gsap.to('.kuk2', {
-			rotate: 360,
-			duration: 10,
-			repeat: -1,
-			ease: 'none'
-		});
+		// gsap.to('.kuk2', {
+		// 	rotate: 360,
+		// 	duration: 10,
+		// 	repeat: -1,
+		// 	ease: 'none'
+		// });
 	});
 </script>
 
@@ -113,11 +113,34 @@
 	<div
 		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
-		<img class="kuk kuk1 size-full object-contain" src="/images/bg-twurl.png" alt="" />
-		<img class="kuk kuk2 size-[60%] object-contain absolute" src="/images/wwh.png" alt="" />
+		<img class="kuk kuk1 size-full object-contain opacity-0" src="/images/bg-twurl.png" alt="" />
+
+		<div class="graphic absolute top-0 w-[350px] h-[450px] p-[0.18rem] xl:w-[90%] overflow-hidden">
+			<video
+				class="size-full object-cover mask mask-squircle"
+				src="/videos/pin-5.mp4"
+				autoplay
+				loop
+				muted
+			></video>
+		</div>
 	</div>
 </main>
 <About />
 <Overview />
 <Purpose />
 <Footer />
+
+<style>
+	.graphic::before {
+		@apply mask mask-squircle;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: linear-gradient(180deg, rgb(var(--color-3)), rgb(var(--color-4)));
+	}
+</style>
