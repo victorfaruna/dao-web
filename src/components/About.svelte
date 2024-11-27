@@ -27,7 +27,7 @@
 			>
 		</p>
 		<p
-			class={`text-[0.9rem] md:text-[0.7rem] font-sora ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[50px]'}`}
+			class={`text-[0.9rem] md:text-[0.7rem] font-sora ${isInView ? 'translate-y-0 opacity-[1] transition-all duration-[1s]' : 'translate-y-[100px] opacity-0'}`}
 		>
 			Joji Dao is a community that is built for helping Crypto projects grow in Nigeria by hosting
 			IRL events and online community development. <br /><br />The first active Crypto community in

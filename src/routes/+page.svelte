@@ -7,30 +7,18 @@
 	import Overview from '$src/components/Overview.svelte';
 	import gsap from 'gsap';
 	$effect(() => {
-		gsap.from('.kukk', {
-			x: 100,
-			duration: 1,
-			stagger: 0.2,
-			ease: 'power1.Out'
-		});
 		gsap.to('.kuk1', {
 			rotate: -360,
 			duration: 5,
 			repeat: -1,
 			ease: 'none'
 		});
-		// gsap.to('.kuk2', {
-		// 	rotate: 360,
-		// 	duration: 10,
-		// 	repeat: -1,
-		// 	ease: 'none'
-		// });
 	});
 </script>
 
 <Header />
 <main
-	class="w-full h-[calc(100vh+20px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-[calc(100vh+50px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
 		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"

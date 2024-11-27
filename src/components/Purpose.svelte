@@ -1,6 +1,6 @@
 <div class="cont">
 	<div
-		class="card-cont w-[60%] md:w-[80%] mx-auto bg-color-3/10 px-10 py-20 rounded-2xl shadow-xl relative"
+		class="card-cont w-[50%] md:w-[80%] mx-auto bg-color-3/10 px-10 py-20 rounded-2xl shadow-xl relative"
 	>
 		<p class="text-[0.8rem] text-center">
 			<span
