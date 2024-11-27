@@ -1,6 +1,17 @@
+<script lang="ts">
+	import { inview } from 'svelte-inview';
+	import type { ObserverEventDetails, Options } from 'svelte-inview';
+	let isInView: boolean;
+	const options: Options = {
+		unobserveOnEnter: true
+	};
+</script>
+
 <p
+	use:inview={options}
+	on:inview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
 	id="overview"
-	class="text-color-1 text-[3rem] md:text-[2rem] text-orange-300 font-bold text-right mr-[10%] md:mr-10"
+	class={`text-color-1 text-[3rem] md:text-[2rem] text-orange-300 font-bold text-right mr-[10%] md:mr-10 ${isInView ? 'translate-x-0 transition-all duration-[1s]' : 'translate-x-[-100px]'}`}
 >
 	<img class="inline w-[100px] opacity-[0.7]" src="/images/coooowhite.svg" alt="" /> Event
 	<br /><span class="text-[2.5rem]">Overview</span>
