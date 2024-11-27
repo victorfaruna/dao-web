@@ -1,7 +1,8 @@
 <p
+	id="overview"
 	class="text-color-1 text-[3rem] md:text-[2rem] text-orange-300 font-bold text-right mr-[10%] md:mr-10"
 >
-	<img class="inline w-[100px]" src="/images/coooo.svg" alt="" /> Event
+	<img class="inline w-[100px] opacity-[0.7]" src="/images/coooowhite.svg" alt="" /> Event
 	<br /><span class="text-[2.5rem]">Overview</span>
 </p>
 <div

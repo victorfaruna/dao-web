@@ -13,8 +13,8 @@
 	>
 		<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
 			<li class="relative active"><a href="/">Home</a></li>
-			<li class="relative"><a href="/about">About</a></li>
-			<li class="relative"><a href="/overview">Overview</a></li>
+			<li class="relative"><a href="#about">About</a></li>
+			<li class="relative"><a href="#overview">Overview</a></li>
 			<li class="relative"><a href="/events">Events</a></li>
 			<li class="relative"><a href="/sponsors">Sponsors</a></li>
 		</ul>

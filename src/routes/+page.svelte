@@ -18,9 +18,9 @@
 			stagger: 0.2,
 			ease: 'power1.Out'
 		});
-		gsap.to('.kuk3', {
-			rotateY: -360,
-			duration: 2,
+		gsap.to('.kuk1', {
+			rotate: -360,
+			duration: 5,
 			repeat: -1,
 			ease: 'none'
 		});
@@ -35,7 +35,7 @@
 
 <Header />
 <main
-	class="w-full h-screen md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-[calc(100vh+20px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
 		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
@@ -113,16 +113,29 @@
 	<div
 		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
-		<img class="kuk kuk1 size-full object-contain opacity-0" src="/images/bg-twurl.png" alt="" />
-
-		<div class="graphic absolute top-0 w-[350px] h-[450px] p-[0.18rem] xl:w-[90%] overflow-hidden">
-			<video
-				class="size-full object-cover mask mask-squircle"
-				src="/videos/pin-5.mp4"
+		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.png" alt="" />
+		<div
+			class="kuk kuk graphic absolute size-[80%] p-[0.18rem] xl:size-[80%] overflow-hidden mask mask-hexagon"
+		>
+			<!-- <video
+				class="size-full object-contain mask mask-hexagon bg-main"
+				src="/videos/pin-6.mp4"
 				autoplay
 				loop
 				muted
-			></video>
+			></video> -->
+			<img
+				src="/videos/pin-7.webp"
+				alt=""
+				class="size-full object-cover mask mask-hexagon bg-main"
+			/>
+		</div>
+		<div class="chat chat-start absolute top-[40px] right-[0px]">
+			<div
+				class="chat-bubble chat-bubble-primary bg-color-3 text-color-1 font-orbitron font-bold tracking-[0.5px] shadow-lg shadow-[rgba(0,0,0,0.4)]"
+			>
+				JOJI DAO<br />to&nbsp;the&nbsp;moon!&nbsp;🚀&nbsp;
+			</div>
 		</div>
 	</div>
 </main>
@@ -133,7 +146,7 @@
 
 <style>
 	.graphic::before {
-		@apply mask mask-squircle;
+		@apply mask mask-circle animate-spin;
 		content: '';
 		position: absolute;
 		top: 0;
@@ -141,6 +154,16 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-		background: linear-gradient(180deg, rgb(var(--color-3)), rgb(var(--color-4)));
+		background: linear-gradient(
+			180deg,
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-3)),
+			rgb(var(--color-4))
+		);
 	}
 </style>
