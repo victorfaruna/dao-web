@@ -3,7 +3,7 @@
 	import type { ObserverEventDetails, Options } from 'svelte-inview';
 	let isInView: boolean;
 	const options: Options = {
-		unobserveOnEnter: true
+		unobserveOnEnter: false
 	};
 </script>
 
