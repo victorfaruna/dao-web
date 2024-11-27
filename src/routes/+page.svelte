@@ -7,12 +7,7 @@
 	import Overview from '$src/components/Overview.svelte';
 	import gsap from 'gsap';
 	$effect(() => {
-		gsap.to('.kuk1', {
-			rotate: 20,
-			duration: 2,
-			ease: 'power1.Out'
-		});
-		gsap.from('.kuk', {
+		gsap.from('.kukk', {
 			x: 100,
 			duration: 1,
 			stagger: 0.2,
