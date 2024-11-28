@@ -26,8 +26,13 @@
 			link: 'https://www.x.com/jojidao/'
 		},
 		{
-			icon: '/images/whatsapp.svg',
+			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
+			link: 'https://www.x.com/jojidao/'
+		},
+		{
+			icon: '/images/avatar.png',
+			title: 'Confirm Identity',
 			link: 'https://www.x.com/jojidao/'
 		}
 	];
@@ -44,7 +49,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="size-5"
+		class="size-4"
 	>
 		<path
 			stroke-linecap="round"
@@ -88,4 +93,14 @@
 			</div>
 		{/each}
 	</div>
+
+	<p class="text-center mt-10">
+		By clicking on the button you confirm to adhere to the <a
+			class="text-color-4 underline"
+			href="/terms-and-conditions">terms and conditions</a
+		> of the scholarship.
+	</p>
+	<button class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-full font-semibold text-[0.9rem]"
+		>Complete 🚀
+	</button>
 </div>
