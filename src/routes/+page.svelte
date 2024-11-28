@@ -101,9 +101,7 @@
 		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
 		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.webp" alt="" />
-		<div
-			class="kuk kuk graphic absolute size-[80%] p-[0.15rem] xl:size-[80%] overflow-hidden mask mask-hexagon"
-		>
+		<div class="kuk kuk graphic absolute size-[80%] p-[0.15rem] overflow-hidden mask mask-hexagon">
 			<img
 				src="/videos/pin-7.webp"
 				alt=""
@@ -112,7 +110,7 @@
 		</div>
 		<div class="chat chat-start absolute top-[40px] right-[0px]">
 			<div
-				class="chat-bubble chat-bubble-primary bg-color-3 text-color-1 font-orbitron font-bold tracking-[0.5px] shadow-lg shadow-[rgba(0,0,0,0.4)]"
+				class="chat-bubble chat-bubble-primary bg-color-3 text-color-1 font-orbitron font-bold tracking-[0.5px] shadow-lg shadow-main/10"
 			>
 				JOJI DAO<br />to&nbsp;the&nbsp;moon!&nbsp;🚀&nbsp;
 			</div>
@@ -140,23 +138,7 @@
 			transparent,
 			transparent,
 			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
-			transparent,
 			rgb(var(--color-3)),
-			rgb(var(--color-4)),
 			rgb(var(--color-4))
 		);
 	}
