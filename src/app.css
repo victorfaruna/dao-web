@@ -29,7 +29,7 @@ html {
 	font-family: 'Sora', sans-serif;
 	color: rgba(var(--color-1));
 	background-color: rgb(var(--bg-main));
-	background: url(/images/main-bg-9.webp);
+	background: url(/images/main-bg-1.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

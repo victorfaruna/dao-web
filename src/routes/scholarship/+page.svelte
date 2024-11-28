@@ -31,7 +31,7 @@
 			link: 'https://www.x.com/jojidao/'
 		},
 		{
-			icon: '/images/avatar.png',
+			icon: '/images/avatar.webp',
 			title: 'Confirm Identity',
 			link: 'https://www.x.com/jojidao/'
 		}
@@ -74,8 +74,8 @@
 		blockchain journey.
 	</p>
 	<div class="flex gap-10">
-		<img src="/images/tasknode.png" alt="" class="size-[50px]" />
-		<img src="/images/scholarship.png" alt="" class="size-[50px]" />
+		<img src="/images/tasknode.webp" alt="" class="size-[50px]" />
+		<img src="/images/academia.webp" alt="" class="size-[50px]" />
 	</div>
 
 	<div class="w-full mt-20 rounded-3xl bg-color-1/10 p-5 flex flex-col gap-7">
@@ -94,7 +94,7 @@
 		{/each}
 	</div>
 
-	<p class="text-center mt-10">
+	<p class="text-center mt-10 font-light text-color-1/80">
 		By clicking on the button you confirm to adhere to the <a
 			class="text-color-4 underline"
 			href="/terms-and-conditions">terms and conditions</a

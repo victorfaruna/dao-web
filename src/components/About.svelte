@@ -15,7 +15,11 @@
 >
 	<div class="left w-[40%] md:w-full flex justify-center">
 		<div class="img relative w-[350px] h-[450px] p-[0.18rem] xl:w-[90%]">
-			<img src="/images/cana.jpeg" class="mask mask-squircle size-full object-cover" alt="" />
+			<img
+				src="/images/glossy-spacewoman.webp"
+				class="mask mask-squircle size-full object-cover"
+				alt=""
+			/>
 		</div>
 	</div>
 	<div class="right w-[60%] md:w-full flex flex-col gap-5">

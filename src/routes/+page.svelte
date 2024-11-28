@@ -100,17 +100,10 @@
 	<div
 		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
-		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.png" alt="" />
+		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.webp" alt="" />
 		<div
 			class="kuk kuk graphic absolute size-[80%] p-[0.15rem] xl:size-[80%] overflow-hidden mask mask-hexagon"
 		>
-			<!-- <video
-				class="size-full object-contain mask mask-hexagon bg-main"
-				src="/videos/pin-6.mp4"
-				autoplay
-				loop
-				muted
-			></video> -->
 			<img
 				src="/videos/pin-7.webp"
 				alt=""
