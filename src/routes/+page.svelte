@@ -5,6 +5,7 @@
 	import Footer from '$components/Footer.svelte';
 	import Purpose from '$src/components/Purpose.svelte';
 	import Overview from '$src/components/Overview.svelte';
+	import { goto } from '$app/navigation';
 	import gsap from 'gsap';
 	$effect(() => {
 		gsap.to('.kuk1', {
@@ -67,13 +68,16 @@
 		<div
 			class="tetg buttons text-[0.7rem] font-bold font-orbitron tracking-[0.5px] flex gap-2 flex-wrap md:justify-center"
 		>
-			<button
+			<!-- <button
 				class="h-[40px] rounded-full px-4 text-color-1 flex gap-2 items-center justify-center bg-gradient-to-r from-color-4 to-color-3/50"
 				>Prizes & Giveaways 🎁</button
-			>
+			> -->
 			<button
+				onclick={() => goto('/scholarship')}
 				class="h-[40px] rounded-full border border-color-3 overflow-hidden pl-6 text-color-1 flex gap-2 items-center justify-center"
-				>Join Us <span class="size-[40px] rounded-full bg-color-3 flex items-center justify-center">
+				>Apply for Scholarship <span
+					class="size-[40px] rounded-full bg-color-3 flex items-center justify-center"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -139,13 +143,27 @@
 		z-index: -1;
 		background: linear-gradient(
 			180deg,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
 			rgb(var(--color-3)),
-			rgb(var(--color-3)),
-			rgb(var(--color-3)),
-			rgb(var(--color-3)),
-			rgb(var(--color-3)),
-			rgb(var(--color-3)),
-			rgb(var(--color-3)),
+			rgb(var(--color-4)),
 			rgb(var(--color-4))
 		);
 	}
