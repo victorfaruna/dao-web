@@ -28,6 +28,7 @@ export default {
 				sora: ['Sora', 'sans-serif'],
 				orbitron: 'Orbitron',
 				unbounded: 'Unbounded',
+				poppins: ['Poppins', 'sans-serif'],
 				nunito: ['Nunito', 'sans-serif'],
 				varela: ['Varela Round', 'sans-serif'],
 				'nova-round': 'Nova Round'

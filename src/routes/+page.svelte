@@ -10,7 +10,7 @@
 	$effect(() => {
 		gsap.to('.kuk1', {
 			rotate: -360,
-			duration: 5,
+			duration: 4,
 			repeat: -1,
 			ease: 'none'
 		});
@@ -19,7 +19,7 @@
 
 <Header />
 <main
-	class="w-full h-[calc(100vh+50px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-[calc(100vh+70px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
 		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
@@ -74,7 +74,7 @@
 			> -->
 			<button
 				onclick={() => goto('/scholarship')}
-				class="h-[40px] rounded-full border border-color-3 overflow-hidden pl-6 text-color-1 flex gap-2 items-center justify-center"
+				class="h-[40px] rounded-full border-[1.5px] border-color-3 overflow-hidden pl-6 text-color-1 flex gap-2 items-center justify-center"
 				>Apply for Scholarship <span
 					class="size-[40px] rounded-full bg-color-3 flex items-center justify-center"
 				>
@@ -102,7 +102,7 @@
 	>
 		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.png" alt="" />
 		<div
-			class="kuk kuk graphic absolute size-[80%] p-[0.18rem] xl:size-[80%] overflow-hidden mask mask-hexagon"
+			class="kuk kuk graphic absolute size-[80%] p-[0.15rem] xl:size-[80%] overflow-hidden mask mask-hexagon"
 		>
 			<!-- <video
 				class="size-full object-contain mask mask-hexagon bg-main"
