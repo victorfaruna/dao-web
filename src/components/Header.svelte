@@ -4,9 +4,7 @@
 	import Logo from '$components/Logo.svelte';
 </script>
 
-<header
-	class="w-full h-[100px] flex items-center justify-between absolute z-[2] top-0 px-[10%] md:px-7"
->
+<header class="w-full h-[100px] flex items-center justify-between z-[2] top-0 px-[10%] md:px-7">
 	<Logo />
 	<nav
 		class="rounded-full bg-color-1/5 backdrop-blur-[10px] px-10 drop-shadow-2xl border border-color-1/15 py-3 md:hidden"
@@ -21,7 +19,7 @@
 	</nav>
 
 	<button
-		class="w-[155px] h-[37px] bg-color-1/90 text-main font-medium rounded-md text-[0.8rem] md:hidden"
+		class="w-[155px] h-[37px] bg-color-4/70 text-color-1 font-medium rounded-md text-[0.8rem] md:hidden"
 	>
 		Contact Us
 	</button>
