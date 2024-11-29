@@ -4,13 +4,13 @@
 			type: 'link',
 			icon: '/images/instagram.svg',
 			title: 'Follow Us On Instagram',
-			link: 'https://www.instagram.com/jojidao/'
+			link: 'https://www.instagram.com/joji_int/'
 		},
 		{
 			type: 'link',
 			icon: '/images/x.svg',
 			title: 'Follow Us On X',
-			link: 'https://www.x.com/jojidao/'
+			link: 'https://www.x.com/JOJI_INT/'
 		},
 		{
 			type: 'link',
@@ -22,35 +22,44 @@
 			type: 'link',
 			icon: '/images/x.svg',
 			title: 'Like, Comment & Retweet Our Post',
-			link: 'https://www.x.com/jojidao/'
+			link: 'https://www.x.com/'
 		},
 		{
 			type: 'link',
 			icon: '/images/luma.webp',
 			title: 'Register for the Event',
-			link: 'https://www.x.com/jojidao/'
+			link: 'https://lu.ma/m8r2te01'
 		},
 		{
 			type: 'link',
 			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
-			link: 'https://www.x.com/jojidao/'
+			link: 'https://www.x.com/'
 		},
 		{
 			type: 'action',
 			icon: '/images/avatar.webp',
-			title: 'Personal Details',
-			link: 'https://www.x.com/jojidao/'
+			title: 'Personal Details'
 		}
 	];
 
 	const FORMDATA = [
-		{ label: 'Fullname', placeholder: 'e.g John Doe' },
-		{ label: 'Email', placeholder: 'e.g john@fuoye.edu.ng' },
-		{ label: 'Matric NO', placeholder: 'e.g CSC/2026/1023' }
+		{ label: 'Fullname', placeholder: 'e.g John Doe', type: 'text' },
+		{ label: 'Email', placeholder: 'e.g john@fuoye.edu.ng', type: 'email' },
+		{ label: 'Matric NO', placeholder: 'e.g CSC/2026/1023', type: 'text' }
 	];
-
-	let modalPopup: any;
+	let modalPopup: any = $state();
+	let isPersonalDetailsLoading = $state(false);
+	let isPersonalDetailsSubmitted = $state(false);
+	const submitPersonalDetails = async () => {
+		try {
+			isPersonalDetailsLoading = true;
+		} catch (error) {
+			console.error('Error ' + error);
+		} finally {
+			isPersonalDetailsLoading = false;
+		}
+	};
 </script>
 
 <button
@@ -110,22 +119,80 @@
 					</button>
 					<dialog bind:this={modalPopup} id="my_modal_2" class="modal">
 						<div class="modal-box py-20 bg-main border border-color-1/20">
-							<form action="" class="flex flex-col gap-6">
+							<button
+								onclick={() => modalPopup.close()}
+								aria-label="Close Modal"
+								class="text-color-1 text-[1rem] font-orbitron top-3 right-3 absolute"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="size-6"
+								>
+									<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+								</svg>
+							</button>
+							<form
+								class="custom-form flex flex-col gap-6"
+								onsubmit={(e: Event) => {
+									e.preventDefault();
+									submitPersonalDetails();
+								}}
+							>
 								{#each FORMDATA as item}
 									<div class="item flex flex-col gap-2">
 										<p class="font-orbitron text=[0.8rem] tracking-[1px]">{item.label}</p>
-										<div class="input-control w-full h-[50px] rounded-2xl border overflow-hidden">
+										<div
+											class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+										>
 											<input
 												class="size-full bg-transparent outline-none border-none text-[0.7rem]"
-												type="text"
+												type={item.type}
+												required
 												placeholder={item.placeholder}
 											/>
 										</div>
 									</div>
 								{/each}
+								<div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">
+										Why do you deserve this scholarship?
+									</p>
+									<div
+										class="input-control w-full h-[120px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<textarea
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											placeholder={'Tell us why you deserve this scholarship'}
+										></textarea>
+									</div>
+								</div>
+
+								<button
+									class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
+								>
+									Submit
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="currentColor"
+										class="size-6"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+										/>
+									</svg>
+								</button>
 							</form>
 						</div>
-						<form method="dialog" class="modal-backdrop bg-color-1/20 backdrop-blur-[10px]">
+						<form method="dialog" class="modal-backdrop bg-main/20 backdrop-blur-[10px]">
 							<button>close</button>
 						</form>
 					</dialog>

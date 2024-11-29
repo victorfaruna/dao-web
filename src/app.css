@@ -53,17 +53,17 @@ html {
 	box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
 	width: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
 	background: rgba(var(--color-3), 0.4);
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
 	background: rgba(var(--color-4), 0.5);
 }
 

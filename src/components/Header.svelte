@@ -20,7 +20,9 @@
 		</ul>
 	</nav>
 
-	<button class="w-[155px] h-[37px] bg-color-1/90 text-main rounded-md text-[0.7rem] md:hidden">
+	<button
+		class="w-[155px] h-[37px] bg-color-1/90 text-main font-medium rounded-md text-[0.8rem] md:hidden"
+	>
 		Contact Us
 	</button>
 
