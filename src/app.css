@@ -29,11 +29,11 @@ html {
 	font-family: 'Sora', sans-serif;
 	color: rgba(var(--color-1));
 	background-color: rgb(var(--bg-main));
+	font-size: 12px;
 	background: url(/images/main-bg-1.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	font-size: 12px;
 }
 :root body::before {
 	content: '';

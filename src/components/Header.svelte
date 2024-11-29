@@ -9,7 +9,7 @@
 >
 	<Logo />
 	<nav
-		class="rounded-full bg-color-1/10 backdrop-blur-[10px] px-10 drop-shadow-2xl border border-color-1/15 py-3 md:hidden"
+		class="rounded-full bg-color-1/5 backdrop-blur-[10px] px-10 drop-shadow-2xl border border-color-1/15 py-3 md:hidden"
 	>
 		<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
 			<li class="relative active"><a href="/">Home</a></li>
@@ -20,9 +20,7 @@
 		</ul>
 	</nav>
 
-	<button
-		class="w-[155px] h-[37px] bg-gradient-to-r from-color-4/80 to-color-3/70 rounded-md text-[0.7rem] md:hidden"
-	>
+	<button class="w-[155px] h-[37px] bg-color-1/90 text-main rounded-md text-[0.7rem] md:hidden">
 		Contact Us
 	</button>
 

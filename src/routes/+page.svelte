@@ -19,7 +19,7 @@
 
 <Header />
 <main
-	class="w-full h-[calc(100vh+70px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-[calc(100vh+80px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
 		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
@@ -32,7 +32,7 @@
 		<p class="tetg text-[4rem] md:text-[2.2rem] font-orbitron font-bold leading-none uppercase">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
-				class="size-[65px] md:size-[30px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
+				class="size-[65px] md:size-[35px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
 				alt=""
 			/><span class="sub-text">c</span>k<span class="sub-text">c</span>h<span class="sub-text"
 				>a</span
@@ -100,8 +100,12 @@
 	<div
 		class="right w-[40%] mb-10 relative md:w-full z-[1] flex items-center justify-center flex-wrap gap-3"
 	>
-		<img class="kuk kuk1 z-[-1] size-full object-contain" src="/images/bg-twurl.webp" alt="" />
-		<div class="kuk kuk graphic absolute size-[80%] p-[0.15rem] overflow-hidden mask mask-hexagon">
+		<img
+			class="kuk kuk1 z-[-1] size-full min-size-[300px] object-contain"
+			src="/images/bg-twurl.webp"
+			alt=""
+		/>
+		<div class="kuk kuk graphic absolute w-[80%] p-[0.15rem] overflow-hidden mask mask-hexagon">
 			<img
 				src="/videos/pin-7.webp"
 				alt=""

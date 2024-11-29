@@ -17,7 +17,7 @@
 		<div class="img relative w-[350px] h-[450px] p-[0.18rem] xl:w-[90%]">
 			<img
 				src="/images/glossy-spacewoman.webp"
-				class="mask mask-squircle size-full object-cover"
+				class="mask mask-squircle size-full object-cover bg-main"
 				alt=""
 			/>
 		</div>
