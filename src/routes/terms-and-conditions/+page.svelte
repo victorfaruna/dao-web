@@ -1,4 +1,24 @@
-<div class="tos-container px-[15rem] py-[10rem] md:px-[2rem] md:py-[4rem]">
+<button
+	class="back-btn size-[40px] rounded-full bg-color-1/10 absolute top-5 left-5 z-[2] flex items-center justify-center"
+	aria-label="Back"
+	onclick={() => window.history.back()}
+>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke-width="1.5"
+		stroke="currentColor"
+		class="size-4"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+		/>
+	</svg>
+</button>
+<div class="tos-container px-[15rem] py-[10rem] md:px-[2rem] md:py-[5rem]">
 	<h1 class="mb-10 text-[1.7rem] font-semibold">Terms of Service (TOS)</h1>
 	<p class="mb-10">
 		Welcome to the JOJI DAO website. By accessing or using this website, you agree to comply with
