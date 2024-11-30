@@ -170,25 +170,28 @@
 										></textarea>
 									</div>
 								</div>
-
 								<button
 									class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
 								>
-									Submit
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke-width="1.5"
-										stroke="currentColor"
-										class="size-6"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-										/>
-									</svg>
+									{#if isPersonalDetailsLoading}
+										<p class="loading loading-spinner"></p>
+									{:else}
+										Submit
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke-width="1.5"
+											stroke="currentColor"
+											class="size-6"
+										>
+											<path
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+											/>
+										</svg>
+									{/if}
 								</button>
 							</form>
 						</div>

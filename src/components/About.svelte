@@ -11,7 +11,7 @@
 	use:inview={options}
 	on:inview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
 	id="about"
-	class="w-full px-[10%] md:px-8 flex md:flex-col-reverse gap-10 font-orbitron"
+	class="w-full px-[10%] md:px-8 flex items-center md:flex-col-reverse gap-10 font-orbitron"
 >
 	<div class="left w-[40%] md:w-full flex justify-center">
 		<div class="img relative w-[350px] h-[450px] p-[0.18rem] xl:w-[90%]">

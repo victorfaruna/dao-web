@@ -19,17 +19,17 @@
 
 <Header />
 <main
-	class="w-full h-[calc(100vh-110px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
+	class="w-full h-[calc(100vh+10px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
 >
 	<div
 		class="w-[60%] md:w-full h-full md:h-[400px] md:pt-[60px] gap-3 flex flex-col justify-center md:items-center relative z-[1]"
 	>
 		<p
-			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-orbitron uppercase tracking-[4px]"
+			class="tetg text-[1.2rem] md:text-[0.8rem] text-color-4 font-orbitron uppercase tracking-[3px]"
 		>
 			The Largest
 		</p>
-		<p class="tetg text-[4rem] md:text-[2.2rem] font-orbitron font-bold leading-none uppercase">
+		<p class="tetg text-[4rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
 				class="size-[65px] md:size-[35px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
