@@ -2,6 +2,11 @@
 	// your script goes here
 	import Logo from '$components/Logo.svelte';
 	let isDrawerActive = $state(false);
+	$effect(() => {
+		if (isDrawerActive) {
+			document.body.style.overflow = 'hidden';
+		}
+	});
 </script>
 
 <section
@@ -40,7 +45,7 @@
 
 	<button
 		onclick={() => (isDrawerActive = !isDrawerActive)}
-		class={`px-[0.7rem] py-[0.25rem] rounded-2xl border-[1.5px] text-[0.8rem] hidden md:flex gap-1 items-center justify-center ${isDrawerActive ? 'border-main text-main' : 'border-color-1'}`}
+		class={`px-[0.7rem] py-[0.25rem] rounded-2xl border-[1.5px] text-[0.8rem] hidden md:flex gap-1 items-center justify-center transition-all duration-[0.5s] ease-out ${isDrawerActive ? 'border-main text-main' : 'border-color-1'}`}
 	>
 		menu
 		{#if isDrawerActive}
