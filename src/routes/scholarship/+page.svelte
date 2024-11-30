@@ -46,7 +46,9 @@
 	const FORMDATA = [
 		{ label: 'Fullname', placeholder: 'e.g John Doe', type: 'text' },
 		{ label: 'Email', placeholder: 'e.g john@fuoye.edu.ng', type: 'email' },
-		{ label: 'Matric NO', placeholder: 'e.g CSC/2026/1023', type: 'text' }
+		{ label: 'Matric NO', placeholder: 'e.g CSC/2026/1023', type: 'text' },
+		{ label: 'Faculty', placeholder: 'e.g Engineering', type: 'text' },
+		{ label: 'Department', placeholder: 'e.g Electrical Engineering', type: 'text' }
 	];
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
@@ -157,6 +159,7 @@
 										</div>
 									</div>
 								{/each}
+
 								<div class="item flex flex-col gap-2">
 									<p class="font-orbitron text=[0.8rem] tracking-[1px]">
 										Why do you deserve this scholarship?

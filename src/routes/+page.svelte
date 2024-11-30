@@ -32,7 +32,7 @@
 		<p class="tetg text-[4rem] md:text-[2.2rem] font-unbounded font-bold leading-none">
 			B<span class="sub-text">l</span><img
 				src="/images/eth.webp"
-				class="size-[65px] md:size-[35px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
+				class="size-[55px] md:size-[25px] inline mr-[-12px] md:mr-[-4px] animate-bounce duration-[2s]"
 				alt=""
 			/><span class="sub-text">c</span>k<span class="sub-text">c</span>h<span class="sub-text"
 				>a</span
@@ -105,7 +105,7 @@
 			src="/images/bg-twurl.webp"
 			alt=""
 		/>
-		<div class="kuk kuk graphic absolute w-[80%] p-[0.15rem] overflow-hidden mask mask-hexagon">
+		<div class="kuk kuk graphic absolute w-[80%] p-[0.1rem] overflow-hidden mask mask-hexagon">
 			<img
 				src="/videos/pin-7.webp"
 				alt=""
