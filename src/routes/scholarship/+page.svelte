@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { supabase } from '$lib/supabaseClient';
+	import { checkReppeatedEmail, checkReppeatedMatric } from '$src/lib/functions';
 	const TASKDATA = [
 		{
 			type: 'link',
@@ -56,8 +58,25 @@
 	const submitPersonalDetails = async () => {
 		try {
 			isPersonalDetailsLoading = true;
+			if ((await checkReppeatedEmail(email?.value || '')) === true) {
+				alert('This email is already registered');
+				return;
+			}
+			if ((await checkReppeatedMatric(matric?.value || '')) === true) {
+				alert('This matric number is already registered');
+				return;
+			}
+			const { data } = await supabase.from('applications').insert({
+				fullname: fullname?.value,
+				email: email?.value,
+				matric_number: matric?.value,
+				department: department?.value,
+				faculty: faculty?.value,
+				proposal: proposal?.value
+			});
+			console.log(data);
 		} catch (error) {
-			console.error('Error ' + error);
+			console.log(error);
 		} finally {
 			isPersonalDetailsLoading = false;
 		}
@@ -177,6 +196,7 @@
 									class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
 								>
 									{#if isPersonalDetailsLoading}
+										<p class="loading loading-spinner"></p>
 										<p class="loading loading-spinner"></p>
 									{:else}
 										Submit
