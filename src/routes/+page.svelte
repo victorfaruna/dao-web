@@ -7,6 +7,7 @@
 	import Overview from '$src/components/Overview.svelte';
 	import { goto } from '$app/navigation';
 	import gsap from 'gsap';
+	//
 	$effect(() => {
 		gsap.to('.kuk1', {
 			rotate: -360,
