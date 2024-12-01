@@ -55,6 +55,14 @@
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
 	let isPersonalDetailsSubmitted = $state(false);
+
+	let fullname: HTMLInputElement;
+	let email: HTMLInputElement;
+	let matric: HTMLInputElement;
+	let faculty: HTMLInputElement;
+	let department: HTMLInputElement;
+	let proposal: HTMLInputElement;
+
 	const submitPersonalDetails = async () => {
 		try {
 			isPersonalDetailsLoading = true;
