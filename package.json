@@ -26,13 +26,16 @@
 		"vite": "^5.0.3"
 	},
 	"dependencies": {
+		"@anthropic-ai/sdk": "^0.32.1",
 		"@supabase/supabase-js": "^2.46.2",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
+		"axios": "^1.7.8",
 		"gsap": "^3.12.5",
 		"gsap-trial": "^3.12.5",
+		"openai": "^4.73.1",
 		"svelte-inview": "^4.0.4",
 		"swiper": "^11.1.15"
 	}

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { supabase } from '$lib/supabaseClient';
-	import { checkReppeatedEmail, checkReppeatedMatric } from '$src/lib/functions';
+	import { checkReppeatedEmail, checkReppeatedMatric, getStudentInfo } from '$src/lib/functions';
+	import { showAlert } from '$lib/functions';
 	const TASKDATA = [
 		{
 			type: 'link',
@@ -45,48 +45,53 @@
 		}
 	];
 
-	const FORMDATA = [
-		{ label: 'Fullname', placeholder: 'e.g John Doe', type: 'text' },
-		{ label: 'Email', placeholder: 'e.g john@fuoye.edu.ng', type: 'email' },
-		{ label: 'Matric NO', placeholder: 'e.g CSC/2026/1023', type: 'text' },
-		{ label: 'Faculty', placeholder: 'e.g Engineering', type: 'text' },
-		{ label: 'Department', placeholder: 'e.g Electrical Engineering', type: 'text' }
-	];
+	let fullname = $state('');
+	let email = $state('');
+	let matric = $state('');
+	let faculty = $state('');
+	let department = $state('');
+	let proposal = $state('');
+
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
 	let isPersonalDetailsSubmitted = $state(false);
-
-	let fullname: HTMLInputElement;
-	let email: HTMLInputElement;
-	let matric: HTMLInputElement;
-	let faculty: HTMLInputElement;
-	let department: HTMLInputElement;
-	let proposal: HTMLInputElement;
+	let isButtonDisabled = $state(false);
 
 	const submitPersonalDetails = async () => {
 		try {
+			isButtonDisabled = true;
 			isPersonalDetailsLoading = true;
-			if ((await checkReppeatedEmail(email?.value || '')) === true) {
-				alert('This email is already registered');
+			if ((await checkReppeatedEmail(email)) === true) {
+				modalPopup.close();
+				showAlert('Email address is already registered', 'alert-error');
 				return;
 			}
-			if ((await checkReppeatedMatric(matric?.value || '')) === true) {
-				alert('This matric number is already registered');
+			if ((await checkReppeatedMatric(matric)) === true) {
+				modalPopup.close();
+				showAlert('Matric number already registered!', 'alert-error');
 				return;
 			}
-			const { data } = await supabase.from('applications').insert({
-				fullname: fullname?.value,
-				email: email?.value,
-				matric_number: matric?.value,
-				department: department?.value,
-				faculty: faculty?.value,
-				proposal: proposal?.value
-			});
-			console.log(data);
+
+			const studentInfo: any = getStudentInfo(matric);
+			if (studentInfo === 'nothing-found') {
+				showAlert('Invalid Matric Number', 'alert-error');
+				return;
+			} else {
+				faculty = studentInfo.faculty;
+				department = studentInfo.department;
+			}
+			console.log(faculty, department);
+
+			isPersonalDetailsSubmitted = true;
+			console.log('Personal details stored succefully');
+			modalPopup.close();
+			showAlert('Details Collated Successfully', 'alert-success');
 		} catch (error) {
+			showAlert('An error occured', 'alert-error');
 			console.log(error);
 		} finally {
 			isPersonalDetailsLoading = false;
+			isButtonDisabled = false;
 		}
 	};
 </script>
@@ -142,12 +147,12 @@
 				</div>
 				{#if item.type === 'action'}
 					<button
-						class="w-[100px] h-[40px] rounded-full bg-color-3 flex-shrink-0"
+						class={`w-[100px] h-[40px] rounded-full ${isPersonalDetailsSubmitted ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
 						onclick={() => modalPopup.showModal()}
-						>Start
+						>{isPersonalDetailsSubmitted ? 'Done' : 'Start'}
 					</button>
 					<dialog bind:this={modalPopup} id="my_modal_2" class="modal">
-						<div class="modal-box py-20 bg-main border border-color-1/20">
+						<div class="modal-box py-20 bg-black border border-color-1/20">
 							<button
 								onclick={() => modalPopup.close()}
 								aria-label="Close Modal"
@@ -171,21 +176,80 @@
 									submitPersonalDetails();
 								}}
 							>
-								{#each FORMDATA as item}
-									<div class="item flex flex-col gap-2">
-										<p class="font-orbitron text=[0.8rem] tracking-[1px]">{item.label}</p>
-										<div
-											class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
-										>
-											<input
-												class="size-full bg-transparent outline-none border-none text-[0.7rem]"
-												type={item.type}
-												required
-												placeholder={item.placeholder}
-											/>
-										</div>
+								<div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Fullname</p>
+									<div
+										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<input
+											bind:value={fullname}
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											type="text"
+											required
+											placeholder="e.g John Doe"
+										/>
 									</div>
-								{/each}
+								</div>
+
+								<div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Email</p>
+									<div
+										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<input
+											bind:value={email}
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											type="text"
+											required
+											placeholder="e.g john@gmail.com"
+										/>
+									</div>
+								</div>
+
+								<div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Matric NO</p>
+									<div
+										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<input
+											bind:value={matric}
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											type="text"
+											required
+											placeholder="e.g EEE/2022/1024"
+										/>
+									</div>
+								</div>
+
+								<!-- <div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Faculty</p>
+									<div
+										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<input
+											bind:this={faculty}
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											type="text"
+											required
+											placeholder="e.g Engineering"
+										/>
+									</div>
+								</div>
+
+								<div class="item flex flex-col gap-2">
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Department</p>
+									<div
+										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+									>
+										<input
+											bind:this={department}
+											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+											type="text"
+											required
+											placeholder="e.g Computer Science"
+										/>
+									</div>
+								</div> -->
 
 								<div class="item flex flex-col gap-2">
 									<p class="font-orbitron text=[0.8rem] tracking-[1px]">
@@ -195,16 +259,18 @@
 										class="input-control w-full h-[120px] rounded-2xl border border-color-1/50 overflow-hidden"
 									>
 										<textarea
+											required
+											bind:value={proposal}
 											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
 											placeholder={'Tell us why you deserve this scholarship'}
 										></textarea>
 									</div>
 								</div>
 								<button
+									disabled={isButtonDisabled}
 									class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
 								>
 									{#if isPersonalDetailsLoading}
-										<p class="loading loading-spinner"></p>
 										<p class="loading loading-spinner"></p>
 									{:else}
 										Submit

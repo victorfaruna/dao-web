@@ -7,7 +7,7 @@
 		<p
 			class={`text-[1.2rem] transition-all duration-[0.5s] ease-out ${
 				isDrawerActive ? 'text-main' : 'text-color-1'
-			} font-orbitron font-regular tracking-[1.5px] flex items-center`}
+			} font-sora font-regular tracking-[1.5px] flex items-center`}
 		>
 			J<img src="/images/logo.webp" alt="" class="size-[1.7rem] inline" />ji Dao
 		</p>

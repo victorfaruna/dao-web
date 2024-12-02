@@ -1,8 +1,9 @@
 <script>
 	// your script goes here
 	import Logo from '$components/Logo.svelte';
+	import { onMount } from 'svelte';
 	let isDrawerActive = $state(false);
-	$effect(() => {
+	onMount(() => {
 		if (isDrawerActive) {
 			document.body.style.overflow = 'hidden';
 		}

@@ -1,0 +1,70 @@
+{
+	"faculties": {
+		"Agriculture": [
+			{ "name": "Agricultural Economics and Extension", "abbreviation": "AEE" },
+			{ "name": "Animal Production and Health", "abbreviation": "APH" },
+			{ "name": "Crop Science and Horticulture", "abbreviation": "CSH" },
+			{ "name": "Fisheries and Aquaculture", "abbreviation": "FA" },
+			{ "name": "Food Science and Technology", "abbreviation": "FST" },
+			{ "name": "Soil Science and Land Resources Management", "abbreviation": "SSL" },
+			{ "name": "Water Resources Management and Agro-Meteorology", "abbreviation": "WAM" }
+		],
+		"Arts": [
+			{ "name": "English and Literary Studies", "abbreviation": "ELS" },
+			{ "name": "History and International Studies", "abbreviation": "HIS" },
+			{ "name": "Linguistics and Languages", "abbreviation": "LL" },
+			{ "name": "Theatre and Media Arts", "abbreviation": "TMA" }
+		],
+		"Education": [
+			{ "name": "Agricultural Education", "abbreviation": "AED" },
+			{ "name": "Biology Education", "abbreviation": "BED" },
+			{ "name": "Business Education", "abbreviation": "BUED" },
+			{ "name": "Chemistry Education", "abbreviation": "CED" },
+			{ "name": "Educational Management", "abbreviation": "EDM" },
+			{ "name": "English Education", "abbreviation": "ENGED" },
+			{ "name": "Library and Information Science", "abbreviation": "LIS" },
+			{ "name": "Mathematics Education", "abbreviation": "MED" },
+			{ "name": "Physics Education", "abbreviation": "PED" }
+		],
+		"Engineering": [
+			{ "name": "Agricultural and Bio-Resources Engineering", "abbreviation": "ABE" },
+			{ "name": "Civil Engineering", "abbreviation": "CVE" },
+			{ "name": "Computer Engineering", "abbreviation": "CPE" },
+			{ "name": "Electrical and Electronics Engineering", "abbreviation": "EEE" },
+			{ "name": "Mechanical Engineering", "abbreviation": "MEE" },
+			{ "name": "Mechatronics Engineering", "abbreviation": "MTE" },
+			{ "name": "Materials and Metallurgical Engineering", "abbreviation": "MME" }
+		],
+		"Law": [{ "name": "Law", "abbreviation": "LAW" }],
+		"Management Sciences": [
+			{ "name": "Accounting", "abbreviation": "ACC" },
+			{ "name": "Banking and Finance", "abbreviation": "BNF" },
+			{ "name": "Business Administration", "abbreviation": "BUA" },
+			{ "name": "Public Administration", "abbreviation": "PUA" }
+		],
+		"Pharmacy": [{ "name": "Pharmacy", "abbreviation": "PHARM" }],
+		"Sciences": [
+			{ "name": "Animal and Environmental Biology", "abbreviation": "AEB" },
+			{ "name": "Biochemistry", "abbreviation": "BCH" },
+			{ "name": "Computer Science", "abbreviation": "CSC" },
+			{ "name": "Geology", "abbreviation": "GLY" },
+			{ "name": "Geophysics", "abbreviation": "GPY" },
+			{ "name": "Industrial Chemistry", "abbreviation": "ICH" },
+			{ "name": "Mathematics", "abbreviation": "MTH" },
+			{ "name": "Microbiology", "abbreviation": "MCB" },
+			{ "name": "Physics", "abbreviation": "PHY" },
+			{ "name": "Plant Science and Biotechnology", "abbreviation": "PSB" },
+			{ "name": "Statistics", "abbreviation": "STA" }
+		],
+		"Social Sciences": [
+			{ "name": "Criminology and Security Studies", "abbreviation": "CSS" },
+			{ "name": "Demography and Social Statistics", "abbreviation": "DSS" },
+			{ "name": "Economics and Development Studies", "abbreviation": "EDS" },
+			{ "name": "Mass Communication", "abbreviation": "MAC" },
+			{ "name": "Peace and Conflict Resolution", "abbreviation": "PCR" },
+			{ "name": "Political Science", "abbreviation": "POS" },
+			{ "name": "Psychology", "abbreviation": "PSY" },
+			{ "name": "Sociology", "abbreviation": "SOC" }
+		]
+	}
+}

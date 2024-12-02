@@ -1,32 +1,25 @@
 <script lang="ts">
 	import '../app.css';
 	let { children } = $props();
-
-	let cursor: HTMLElement;
-
-	$effect(() => {
-		document.addEventListener('mousemove', function (e) {
-			cursor.setAttribute('style', `left: ${e.pageX}px; top: ${e.pageY}px`);
-		});
-
-		document.addEventListener('mouseleave', (event) => {
-			if (event.clientY <= 0) {
-				cursor.style.display = 'none';
-			}
-		});
-
-		return () => {
-			document.removeEventListener('mousemove', function (e) {
-				cursor.setAttribute('style', `left: ${e.pageX}px; top: ${e.pageY}px`);
-			});
-		};
-	});
 </script>
 
-<!-- <div
-	bind:this={cursor}
-	class="xl:hidden cursor size-[30px] rounded-full bg-transparent absolute z-[999] pointer-events-none"
+<div
+	id="alert"
+	role="alert"
+	class={`w-[60%] md:w-full md:h-[50px] alert fixed z-[999] right-0 top-0 translate-x-[100vw] p-4 text-white  rounded-md shadow-lg flex transition-all duration-[0.5s] ease-out`}
 >
-	<img src="/images/cursor.svg" alt="" class="w-[30px] h-[30px]" />
-</div> -->
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		class="h-6 w-6 shrink-0 stroke-current"
+		fill="none"
+		viewBox="0 0 24 24"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+		/>
+	</svg>
+</div>
 {@render children()}
