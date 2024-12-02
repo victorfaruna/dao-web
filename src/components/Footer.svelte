@@ -14,18 +14,37 @@
 				Venue: Federal University Oye Ekiti, Ikole Campus, Ekiti State, Nigeria
 				<br />
 				<br />
-				Phone: +234 800 000 000
+				Phone: +234 704 036 8997
 				<br />
 				<br />
-				Email: dao@joji.com
+				Email: jojifeedback@gmail.com
 			</p>
 		</div>
 
 		<div class="category flex flex-col gap-2">
 			<p class="title">Important Links</p>
 			<p class="text">
-				<a href="/" class="flex gap-1">
-                                                  <svg
+				<a href="/scholarship" class="flex gap-1">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="size-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+						/>
+					</svg>
+					Apply for schoolarship
+				</a>
+				<br />
+				<br />
+				<a href="//" class="flex gap-1">
+					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
 						height="16"
@@ -37,10 +56,10 @@
 							d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
 						/>
 					</svg>Whatsapp Community
-                                        </a>
+				</a>
 				<br />
 				<br />
-				<a href="/" class="flex gap-1"
+				<a href="//t.me/JOJIDAO" target="_blank" class="flex gap-1"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -56,7 +75,7 @@
 				>
 				<br />
 				<br />
-				<a href="//x.com/JOJI_INT" class="flex gap-1"
+				<a href="//x.com/JOJI_INT" target="_blank" class="flex gap-1"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -72,7 +91,7 @@
 				>
 				<br />
 				<br />
-				<a href="//instagram.com/joji_int" class="flex gap-1">
+				<a href="//instagram.com/joji_int" target="_blank" class="flex gap-1">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
