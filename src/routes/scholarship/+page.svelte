@@ -39,7 +39,7 @@
 			type: 'link',
 			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
-			link: 'https://www.x.com/'
+			link: 'https://wa.me/?text=🚀%20Join%20the%20Tech%20Revolution%20with%20JOJI%20DAO!%20🌐%0A%0A🔹%20Discover%20the%20future%20of%20Web3%20%26%20Blockchain%0A🔹%20Attend%20workshops%2C%20meet%20experts%2C%20and%20network%20with%20innovators%0A🔹%20Be%20part%20of%20a%20global%20community%20shaping%20the%20future%0A%0A📅%20Date%3A%20[Event%20Date]%0A📍%20Location%3A%20[Event%20Location]%0A%0A👉%20Swipe%20up%20for%20more%20info%20or%20register%20now!%0A%23JOJIDAO%20%23Web3%20%23TechEvent%20%23Blockchain%20%23Innovation%20%23Future'
 		},
 		{
 			type: 'action',
