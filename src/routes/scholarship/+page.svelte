@@ -2,6 +2,8 @@
 	import { checkReppeatedEmail, checkReppeatedMatric, getStudentInfo } from '$src/lib/functions';
 	import { showAlert } from '$lib/functions';
 	import { supabase } from '$src/lib/supabaseClient';
+	import { onMount } from 'svelte';
+
 	const TASKDATA = [
 		{
 			type: 'link',
@@ -54,7 +56,15 @@
 	let proposal = $state('');
 
 	let taskDone: any = $state([]);
+	onMount(() => {
+		taskDone = JSON.parse(localStorage.getItem('taskDone') || '');
+	});
 
+	function addTask(taskId: number) {
+		taskDone = [...taskDone, taskId];
+		// Save updated array to localStorage
+		localStorage.setItem('taskDone', JSON.stringify(taskDone));
+	}
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
 	let isPersonalDetailsSubmitted = $state(false);
@@ -89,8 +99,8 @@
 
 			isPersonalDetailsSubmitted = true;
 			console.log('Personal details stored succefully');
+			addTask(7);
 			modalPopup.close();
-			showAlert('Details Collated Successfully', 'alert-success');
 		} catch (error) {
 			modalPopup.close();
 			showAlert('An error occured', 'alert-error');
@@ -104,7 +114,7 @@
 	const submitApplication = async () => {
 		try {
 			isApplicationFormLoading = true;
-			if (taskDone.length === TASKDATA.length - 1) {
+			if (taskDone.length === TASKDATA.length) {
 				const { data } = await supabase.from('applications').insert({
 					matric_number: matric,
 					email: email,
@@ -182,9 +192,9 @@
 				</div>
 				{#if item.type === 'action'}
 					<button
-						class={`w-[100px] h-[40px] rounded-full ${isPersonalDetailsSubmitted ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
+						class={`w-[100px] h-[40px] rounded-full ${taskDone.includes(index + 1) ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
 						onclick={() => modalPopup.showModal()}
-						>{isPersonalDetailsSubmitted ? 'Done' : 'Start'}
+						>{taskDone.includes(index + 1) ? 'Done' : 'Start'}
 					</button>
 					<dialog bind:this={modalPopup} id="my_modal_2" class="modal">
 						<div class="modal-box py-20 bg-black border border-color-1/20">
@@ -337,7 +347,7 @@
 						target="_blank"
 						class="flex-shrink-0"
 						onclick={() =>
-							taskDone.includes(index + 1) ? console.log('done') : taskDone.push(index + 1)}
+							taskDone.includes(index + 1) ? console.log('done') : addTask(index + 1)}
 					>
 						<button
 							class={`w-[100px] h-[40px] rounded-full bg-color-3 ${taskDone.includes(index + 1) ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}

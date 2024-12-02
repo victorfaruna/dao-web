@@ -2,10 +2,23 @@ import { supabase } from './supabaseClient';
 import fuoyeData from './fuoye.json';
 const data: any = fuoyeData;
 
+let currentTimeout: NodeJS.Timeout | null = null;
+
 export function showAlert(text: string, type: string = '') {
 	const alertElement = document.querySelector('#alert');
 
 	if (alertElement) {
+		// Clear any existing timeout
+		if (currentTimeout) {
+			clearTimeout(currentTimeout);
+			currentTimeout = null;
+
+			// Clean up existing text content and classes
+			alertElement.textContent = '';
+			alertElement.classList.replace('translate-x-0', 'translate-x-[100vw]');
+			alertElement.classList.remove(type);
+		}
+
 		// Create and append a text node
 		const textNode = document.createTextNode(text);
 		alertElement.appendChild(textNode);
@@ -14,19 +27,24 @@ export function showAlert(text: string, type: string = '') {
 		alertElement.classList.replace('translate-x-[100vw]', 'translate-x-0');
 		alertElement.classList.add(type, 'transition-all', 'duration-[0.5s]', 'ease-out');
 
-		// Hide the alert after 3 seconds
-		setTimeout(() => {
+		// Set a new timeout to hide the alert
+		currentTimeout = setTimeout(() => {
 			alertElement.classList.replace('translate-x-0', 'translate-x-[100vw]');
 			alertElement.classList.remove(type);
+
 			// Remove the text node after the animation
 			setTimeout(() => {
 				if (alertElement.contains(textNode)) {
 					alertElement.removeChild(textNode);
 				}
-			}, 100); // Delay for the transition duration (adjust if necessary)
+			}, 10); // Delay for the transition duration (adjust if necessary)
+
+			// Clear the timeout reference
+			currentTimeout = null;
 		}, 3000);
 	}
 }
+
 export async function checkReppeatedEmail(email: string) {
 	try {
 		const { data } = await supabase.from('applications').select().eq('email', email);
