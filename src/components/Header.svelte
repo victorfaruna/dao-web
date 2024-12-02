@@ -38,11 +38,13 @@
 		</ul>
 	</nav>
 
-	<button
-		class="w-[155px] h-[37px] bg-color-4/70 text-color-1 rounded-md font-medium text-[0.7rem] md:hidden"
-	>
-		Contact Us
-	</button>
+	<a href="//wa.me/+2347040368997">
+		<button
+			class="w-[155px] h-[37px] bg-color-4/70 text-color-1 rounded-md font-medium text-[0.7rem] md:hidden"
+		>
+			Contact Us
+		</button>
+	</a>
 
 	<button
 		onclick={() => (isDrawerActive = !isDrawerActive)}

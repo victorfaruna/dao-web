@@ -100,10 +100,10 @@
 		If you have any questions or concerns about these Terms of Service, please contact us at:
 		<br />
 		<br />
-		Email: support@jojidao.com
+		Email: jojifeedback@gmail.com
 		<br />
 		<br />
-		Phone: +234-XXX-XXX-XXXX
+		Phone: +234 704 036 8997
 		<br />
 		<br />
 		Address: JOJI DAO Headquarters, Ekiti State, Nigeria
