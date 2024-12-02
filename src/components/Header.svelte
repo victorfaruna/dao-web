@@ -11,7 +11,7 @@
 </script>
 
 <section
-	class={`drawer w-screen h-screen bg-[#fdfff5] absolute z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-100%]'}`}
+	class={`drawer-cont w-screen h-screen bg-[#fdfff5] absolute z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-300vw]'}`}
 >
 	<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
 		<li class="relative active"><a href="/">Home</a></li>
