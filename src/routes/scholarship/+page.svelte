@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { checkReppeatedEmail, checkReppeatedMatric, getStudentInfo } from '$src/lib/functions';
 	import { showAlert } from '$lib/functions';
+	import { supabase } from '$src/lib/supabaseClient';
 	const TASKDATA = [
 		{
 			type: 'link',
@@ -48,13 +49,16 @@
 	let fullname = $state('');
 	let email = $state('');
 	let matric = $state('');
-	let faculty = $state('');
-	let department = $state('');
+	let faculty = $state(' ');
+	let department = $state(' ');
 	let proposal = $state('');
+
+	let taskDone: any = $state([]);
 
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
 	let isPersonalDetailsSubmitted = $state(false);
+	let isApplicationFormLoading = $state(false);
 	let isButtonDisabled = $state(false);
 
 	const submitPersonalDetails = async () => {
@@ -74,6 +78,7 @@
 
 			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
+				modalPopup.close();
 				showAlert('Invalid Matric Number', 'alert-error');
 				return;
 			} else {
@@ -87,11 +92,41 @@
 			modalPopup.close();
 			showAlert('Details Collated Successfully', 'alert-success');
 		} catch (error) {
+			modalPopup.close();
 			showAlert('An error occured', 'alert-error');
 			console.log(error);
 		} finally {
 			isPersonalDetailsLoading = false;
 			isButtonDisabled = false;
+		}
+	};
+
+	const submitApplication = async () => {
+		try {
+			isApplicationFormLoading = true;
+			if (taskDone.length === TASKDATA.length - 1) {
+				const { data } = await supabase.from('applications').insert({
+					matric_number: matric,
+					email: email,
+					fullname: fullname,
+					department: department,
+					faculty: faculty,
+					proposal: proposal
+				});
+				modalPopup.close();
+				showAlert('Scholarship Application Submitted Successfully', 'alert-success');
+				return;
+			} else {
+				modalPopup.close();
+				showAlert('Please complete all the tasks', 'alert-error');
+				return;
+			}
+		} catch (error) {
+			modalPopup.close();
+			showAlert('An error occured', 'alert-error');
+			console.log(error);
+		} finally {
+			isApplicationFormLoading = false;
 		}
 	};
 </script>
@@ -137,7 +172,7 @@
 	</div>
 
 	<div class="w-full mt-20 rounded-3xl bg-color-1/10 p-5 flex flex-col gap-7">
-		{#each TASKDATA as item}
+		{#each TASKDATA as item, index}
 			<div class="item w-full flex gap-2 justify-between items-center">
 				<div class="left flex gap-2 items-center">
 					<div class="img-cont size-[45px] flex-shrink-0 rounded-xl bg-main p-2">
@@ -297,8 +332,17 @@
 						</form>
 					</dialog>
 				{:else if item.type === 'link'}
-					<a href={item.link} target="_blank" class="flex-shrink-0">
-						<button class="w-[100px] h-[40px] rounded-full bg-color-3">Start </button>
+					<a
+						href={item.link}
+						target="_blank"
+						class="flex-shrink-0"
+						onclick={() =>
+							taskDone.includes(index + 1) ? console.log('done') : taskDone.push(index + 1)}
+					>
+						<button
+							class={`w-[100px] h-[40px] rounded-full bg-color-3 ${taskDone.includes(index + 1) ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
+							>{taskDone.includes(index + 1) ? 'Done' : 'Start'}
+						</button>
 					</a>
 				{/if}
 			</div>
@@ -311,7 +355,9 @@
 			href="/terms-and-conditions">terms and conditions</a
 		> of the scholarship.
 	</p>
-	<button class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
+	<button
+		class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
+		onclick={submitApplication}
 		>Complete 🚀
 	</button>
 </div>
