@@ -65,6 +65,12 @@
 		// Save updated array to localStorage
 		localStorage.setItem('taskDone', JSON.stringify(taskDone));
 	}
+
+	function clearTasks() {
+		taskDone = [];
+		// Save updated array to localStorage
+		localStorage.setItem('taskDone', JSON.stringify(taskDone));
+	}
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
 	let isPersonalDetailsSubmitted = $state(false);
@@ -80,13 +86,13 @@
 				showAlert('Email address is already registered', 'alert-error');
 				return;
 			}
-			if ((await checkReppeatedMatric(matric)) === true) {
+			if ((await checkReppeatedMatric(matric.toUpperCase())) === true) {
 				modalPopup.close();
 				showAlert('Matric number already registered!', 'alert-error');
 				return;
 			}
 
-			const studentInfo: any = getStudentInfo(matric);
+			const studentInfo: any = getStudentInfo(matric.toUpperCase());
 			if (studentInfo === 'nothing-found') {
 				modalPopup.close();
 				showAlert('Invalid Matric Number', 'alert-error');
@@ -116,7 +122,7 @@
 			isApplicationFormLoading = true;
 			if (taskDone.length === TASKDATA.length) {
 				const { data } = await supabase.from('applications').insert({
-					matric_number: matric,
+					matric_number: matric.toUpperCase(),
 					email: email,
 					fullname: fullname,
 					department: department,
@@ -125,6 +131,7 @@
 				});
 				modalPopup.close();
 				showAlert('Scholarship Application Submitted Successfully', 'alert-success');
+				clearTasks();
 				return;
 			} else {
 				modalPopup.close();
@@ -244,7 +251,7 @@
 										<input
 											bind:value={email}
 											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
-											type="text"
+											type="email"
 											required
 											placeholder="e.g john@gmail.com"
 										/>
