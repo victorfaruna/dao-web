@@ -2,7 +2,7 @@
 	import { checkReppeatedEmail, checkReppeatedMatric, getStudentInfo } from '$src/lib/functions';
 	import { showAlert } from '$lib/functions';
 	import { supabase } from '$src/lib/supabaseClient';
-	import { onMount } from 'svelte';
+	import axios from 'axios';
 
 	const TASKDATA = [
 		{
@@ -55,8 +55,12 @@
 	let department = $state(' ');
 	let proposal = $state('');
 
+	$effect(() => {
+		matric = matric.toUpperCase();
+	});
+
 	let taskDone: any = $state([]);
-	onMount(() => {
+	$effect(() => {
 		taskDone = JSON.parse(localStorage.getItem('taskDone') || '');
 	});
 
@@ -73,26 +77,23 @@
 	}
 	let modalPopup: any = $state();
 	let isPersonalDetailsLoading = $state(false);
-	let isPersonalDetailsSubmitted = $state(false);
 	let isApplicationFormLoading = $state(false);
-	let isButtonDisabled = $state(false);
 
 	const submitPersonalDetails = async () => {
 		try {
-			isButtonDisabled = true;
 			isPersonalDetailsLoading = true;
 			if ((await checkReppeatedEmail(email)) === true) {
 				modalPopup.close();
 				showAlert('Email address is already registered', 'alert-error');
 				return;
 			}
-			if ((await checkReppeatedMatric(matric.toUpperCase())) === true) {
+			if ((await checkReppeatedMatric(matric)) === true) {
 				modalPopup.close();
 				showAlert('Matric number already registered!', 'alert-error');
 				return;
 			}
 
-			const studentInfo: any = getStudentInfo(matric.toUpperCase());
+			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
 				modalPopup.close();
 				showAlert('Invalid Matric Number', 'alert-error');
@@ -102,10 +103,10 @@
 				department = studentInfo.department;
 			}
 			console.log(faculty, department);
-
-			isPersonalDetailsSubmitted = true;
 			console.log('Personal details stored succefully');
-			addTask(7);
+			if (!taskDone.includes(7)) {
+				addTask(7);
+			}
 			modalPopup.close();
 		} catch (error) {
 			modalPopup.close();
@@ -113,16 +114,19 @@
 			console.log(error);
 		} finally {
 			isPersonalDetailsLoading = false;
-			isButtonDisabled = false;
 		}
 	};
 
 	const submitApplication = async () => {
 		try {
+			const { data } = await axios.get(
+				`/api/twitter/verify-follow?targetUsername=${'dev_victor_f'}`
+			);
+			console.log(data);
 			isApplicationFormLoading = true;
 			if (taskDone.length === TASKDATA.length) {
 				const { data } = await supabase.from('applications').insert({
-					matric_number: matric.toUpperCase(),
+					matric_number: matric,
 					email: email,
 					fullname: fullname,
 					department: department,
@@ -146,6 +150,10 @@
 			isApplicationFormLoading = false;
 		}
 	};
+
+	$effect(() => {
+		console.log(taskDone);
+	});
 </script>
 
 <button
@@ -319,7 +327,7 @@
 									</div>
 								</div>
 								<button
-									disabled={isButtonDisabled}
+									disabled={isPersonalDetailsLoading}
 									class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
 								>
 									{#if isPersonalDetailsLoading}
@@ -375,6 +383,10 @@
 	<button
 		class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
 		onclick={submitApplication}
-		>Complete 🚀
+		>{#if isApplicationFormLoading}
+			<p class="loading loading-spinner"></p>
+		{:else}
+			Complete 🚀
+		{/if}
 	</button>
 </div>

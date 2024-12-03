@@ -37,6 +37,8 @@
 		"gsap-trial": "^3.12.5",
 		"openai": "^4.73.1",
 		"svelte-inview": "^4.0.4",
-		"swiper": "^11.1.15"
+		"swiper": "^11.1.15",
+		"twitter-api-v2": "^1.18.2",
+		"twitter.js": "^0.14.0"
 	}
 }
