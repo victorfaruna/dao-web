@@ -154,53 +154,53 @@
 	};
 
 	const validateTask = async (item: number) => {
-		switch (item) {
-			case 1:
-				if (twitterUsername && instagramUsername) {
-					const { data } = await axios.get('/api/');
-				} else {
-					modalPopupSocial.showModal();
-				}
-				break;
-			case 2:
-				if (twitterUsername && instagramUsername) {
-					if (!isTaskCheckingLoadingList.includes(item)) {
-						isTaskCheckingLoadingList.push(item);
+		try {
+			switch (item) {
+				case 1:
+					break;
+				case 2:
+					if (twitterUsername && instagramUsername) {
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						const { data } = await axios.get(
+							'/api/twitter/verify-follow?targetUsername=' + twitterUsername
+						);
+						if (data.followStatus === true) {
+							addConfirmedTask(item);
+							showAlert('Task completed', 'alert-success');
+						} else {
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task not completed', 'alert-error');
+						}
+					} else {
+						modalPopupSocial.showModal();
 					}
-					const { data } = await axios.get(
-						'/api/twitter/verify-follow?targetUsername=' + twitterUsername
-					);
-					if (data.followStatus === true) {
+					break;
+				case 3:
+					if (item === 3) {
+					}
+					break;
+				case 4:
+					if (item === 4) {
+					}
+					break;
+				case 5:
+					if (item === 5) {
+					}
+					break;
+				case 6:
+					if (item === 6) {
 						addConfirmedTask(item);
 						showAlert('Task completed', 'alert-success');
-					} else {
-						isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
-							(item: any) => item !== item
-						);
-						showAlert('Task not completed', 'alert-error');
 					}
-				} else {
-					modalPopupSocial.showModal();
-				}
-				break;
-			case 3:
-				if (item === 3) {
-				}
-				break;
-			case 4:
-				if (item === 4) {
-				}
-				break;
-			case 5:
-				if (item === 5) {
-				}
-				break;
-			case 6:
-				if (item === 6) {
-					addConfirmedTask(item);
-					showAlert('Task completed', 'alert-success');
-				}
-				break;
+					break;
+			}
+		} catch (error) {
+			isTaskCheckingLoadingList = [];
+			showAlert('An error occured', 'alert-error');
 		}
 	};
 
