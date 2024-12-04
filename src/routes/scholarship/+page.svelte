@@ -48,21 +48,67 @@
 		}
 	];
 
-	let fullname = $state('');
-	let email = $state('');
-	let matric = $state('');
-	let faculty = $state(' ');
-	let department = $state(' ');
-	let proposal = $state('');
+	let userData = $state(
+		typeof window !== 'undefined' && localStorage.getItem('userData')
+			? JSON.parse(localStorage.getItem('userData') || '')
+			: []
+	);
+	let fullname = $state(userData?.fullname || '');
+	let email = $state(userData?.email || '');
+	let matric = $state(userData?.matric || '');
+	let faculty = $state(userData?.faculty || '');
+	let department = $state(userData?.department || '');
+	let proposal = $state(userData?.proposal || '');
+	//Social details...
+	let twitterUsername = $state(
+		typeof window !== 'undefined' && localStorage.getItem('twitterUsername')
+			? localStorage.getItem('twitterUsername') || ''
+			: ''
+	);
+	let instagramUsername = $state(
+		typeof window !== 'undefined' && localStorage.getItem('instagramUsername')
+			? localStorage.getItem('instagramUsername') || ''
+			: ''
+	);
+	//
+	let locallyStoredUserData: any = $derived({
+		fullname: fullname,
+		email: email,
+		matric: matric,
+		faculty: faculty,
+		department: department,
+		proposal: proposal
+	});
 
 	$effect(() => {
 		matric = matric.toUpperCase();
 	});
 
-	let taskDone: any = $state([]);
-	$effect(() => {
-		taskDone = JSON.parse(localStorage.getItem('taskDone') || '');
-	});
+	let taskDone: any = $state(
+		typeof window !== 'undefined' && localStorage.getItem('taskDone')
+			? JSON.parse(localStorage.getItem('taskDone') || '')
+			: []
+	);
+	let confirmedTasks: any = $state(
+		typeof window !== 'undefined' && localStorage.getItem('confirmedTasks')
+			? JSON.parse(localStorage.getItem('confirmedTasks') || '')
+			: []
+	);
+
+	const checkTaskDone = (item: any) => {
+		if (taskDone.includes(item)) {
+			return true;
+		}
+
+		return false;
+	};
+
+	const checkTaskConfirmed = (item: any) => {
+		if (confirmedTasks.includes(item)) {
+			return true;
+		}
+		return false;
+	};
 
 	function addTask(taskId: number) {
 		taskDone = [...taskDone, taskId];
@@ -70,24 +116,102 @@
 		localStorage.setItem('taskDone', JSON.stringify(taskDone));
 	}
 
-	function clearTasks() {
-		taskDone = [];
+	function removeTask(taskId: number) {
+		taskDone = taskDone.filter((item: any) => item !== taskId);
 		// Save updated array to localStorage
 		localStorage.setItem('taskDone', JSON.stringify(taskDone));
 	}
+
+	function addConfirmedTask(taskId: number) {
+		confirmedTasks = [...confirmedTasks, taskId];
+		// Save updated array to localStorage
+		localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
+	}
+
+	function removeConfirmedTask(taskId: number) {
+		confirmedTasks = confirmedTasks.filter((item: any) => item !== taskId);
+		// Save updated array to localStorage
+		localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
+	}
+
+	function clearTasks() {
+		taskDone = [];
+		confirmedTasks = [];
+		// Save updated array to localStorage
+		localStorage.setItem('taskDone', JSON.stringify(taskDone));
+		localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
+	}
 	let modalPopup: any = $state();
+	let modalPopupSocial: any = $state();
+	let isTaskCheckingLoadingList: any = $state([]);
 	let isPersonalDetailsLoading = $state(false);
 	let isApplicationFormLoading = $state(false);
 
+	const saveSocialDetails = () => {
+		localStorage.setItem('twitterUsername', twitterUsername);
+		localStorage.setItem('instagramUsername', instagramUsername);
+		modalPopupSocial.close();
+	};
+
+	const validateTask = async (item: number) => {
+		switch (item) {
+			case 1:
+				if (twitterUsername && instagramUsername) {
+					const { data } = await axios.get('/api/');
+				} else {
+					modalPopupSocial.showModal();
+				}
+				break;
+			case 2:
+				if (twitterUsername && instagramUsername) {
+					if (!isTaskCheckingLoadingList.includes(item)) {
+						isTaskCheckingLoadingList.push(item);
+					}
+					const { data } = await axios.get(
+						'/api/twitter/verify-follow?targetUsername=' + twitterUsername
+					);
+					if (data.followStatus === true) {
+						addConfirmedTask(item);
+					} else {
+						showAlert('Task successfull', 'alert-success');
+					}
+				} else {
+					modalPopupSocial.showModal();
+				}
+				break;
+			case 3:
+				if (item === 3) {
+				}
+				break;
+			case 4:
+				if (item === 4) {
+				}
+				break;
+			case 5:
+				if (item === 5) {
+				}
+				break;
+			case 6:
+				if (item === 6) {
+				}
+				break;
+		}
+	};
+
 	const submitPersonalDetails = async () => {
 		try {
+			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			isPersonalDetailsLoading = true;
 			if ((await checkReppeatedEmail(email)) === true) {
+				removeTask(7);
+				removeConfirmedTask(7);
 				modalPopup.close();
 				showAlert('Email address is already registered', 'alert-error');
 				return;
 			}
 			if ((await checkReppeatedMatric(matric)) === true) {
+				removeTask(7);
+				removeConfirmedTask(7);
 				modalPopup.close();
 				showAlert('Matric number already registered!', 'alert-error');
 				return;
@@ -95,6 +219,8 @@
 
 			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
+				removeTask(7);
+				removeConfirmedTask(7);
 				modalPopup.close();
 				showAlert('Invalid Matric Number', 'alert-error');
 				return;
@@ -104,8 +230,9 @@
 			}
 			console.log(faculty, department);
 			console.log('Personal details stored succefully');
-			if (!taskDone.includes(7)) {
+			if (!checkTaskConfirmed(7) && !checkTaskDone(7)) {
 				addTask(7);
+				addConfirmedTask(7);
 			}
 			modalPopup.close();
 		} catch (error) {
@@ -116,15 +243,10 @@
 			isPersonalDetailsLoading = false;
 		}
 	};
-
 	const submitApplication = async () => {
 		try {
-			const { data } = await axios.get(
-				`/api/twitter/verify-follow?targetUsername=${'dev_victor_f'}`
-			);
-			console.log(data);
 			isApplicationFormLoading = true;
-			if (taskDone.length === TASKDATA.length) {
+			if (confirmedTasks.length === TASKDATA.length) {
 				const { data } = await supabase.from('applications').insert({
 					matric_number: matric,
 					email: email,
@@ -198,6 +320,129 @@
 
 	<div class="w-full mt-20 rounded-3xl bg-color-1/10 p-5 flex flex-col gap-7">
 		{#each TASKDATA as item, index}
+			<dialog bind:this={modalPopupSocial} id="my_modal_2" class="modal">
+				<div class="modal-box py-20 bg-black border border-color-1/20">
+					<button
+						onclick={() => modalPopupSocial.close()}
+						aria-label="Close Modal"
+						class="text-color-1 text-[1rem] font-orbitron top-3 right-3 absolute"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+						</svg>
+					</button>
+					<form
+						class="custom-form flex flex-col gap-6"
+						onsubmit={(e: any) => {
+							saveSocialDetails();
+							e.preventDefault();
+						}}
+					>
+						<div class="item flex flex-col gap-2">
+							<p class="font-orbitron text=[0.8rem] tracking-[1px]">
+								X Username
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="currentColor"
+									class="bi bi-twitter-x size-4 inline"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+									/>
+								</svg>
+							</p>
+							<div
+								class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+							>
+								<input
+									bind:value={twitterUsername}
+									class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+									type="text"
+									required
+									placeholder="e.g joji_int"
+								/>
+							</div>
+						</div>
+
+						<div class="item flex flex-col gap-2">
+							<p class="font-orbitron text=[0.8rem] tracking-[1px]">
+								Instagram Username
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="currentColor"
+									class="bi bi-instagram size-4 inline"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+									/>
+								</svg>
+							</p>
+							<div
+								class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
+							>
+								<input
+									bind:value={instagramUsername}
+									class="size-full bg-transparent outline-none border-none text-[0.7rem]"
+									type="text"
+									required
+									placeholder="e.g joji_int"
+								/>
+							</div>
+						</div>
+
+						<p class="text-[goldenrod] text-center font-sora">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-4 inline"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z"
+								/>
+							</svg>
+							This information will only be used to validate tasks.
+						</p>
+
+						<button
+							class="w-full h-[50px] rounded-2xl bg-color-3 font-semibold text-color-1 text-[0.8rem] flex items-center justify-center gap-1"
+						>
+							Save
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-6"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+								/>
+							</svg>
+						</button>
+					</form>
+				</div>
+
+				<form method="dialog" class="modal-backdrop bg-main/20 backdrop-blur-[10px]">
+					<button>close</button>
+				</form>
+			</dialog>
 			<div class="item w-full flex gap-2 justify-between items-center">
 				<div class="left flex gap-2 items-center">
 					<div class="img-cont size-[45px] flex-shrink-0 rounded-xl bg-main p-2">
@@ -206,11 +451,53 @@
 					<div class="info text-[0.8rem] text-color-1/70">{item.title}</div>
 				</div>
 				{#if item.type === 'action'}
-					<button
-						class={`w-[100px] h-[40px] rounded-full ${taskDone.includes(index + 1) ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
-						onclick={() => modalPopup.showModal()}
-						>{taskDone.includes(index + 1) ? 'Done' : 'Start'}
-					</button>
+					{#if checkTaskConfirmed(index + 1)}
+						<div class="flex gap-1 items-center">
+							<button aria-label="Edit Details" onclick={() => modalPopup.showModal()}>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="size-4 text-blue-400"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+									/>
+								</svg>
+							</button>
+
+							<p
+								class="inline-flex items-center justify-center gap-1 rounded-full text-color-1 flex-shrink-0"
+							>
+								Complete! 🎉
+							</p>
+						</div>
+					{:else}
+						<button
+							onclick={() => modalPopup.showModal()}
+							class="w-[100px] h-[40px] flex items-center justify-center gap-1 rounded-full bg-color-3 flex-shrink-0"
+						>
+							Start
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="size-3"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+								/>
+							</svg>
+						</button>
+					{/if}
 					<dialog bind:this={modalPopup} id="my_modal_2" class="modal">
 						<div class="modal-box py-20 bg-black border border-color-1/20">
 							<button
@@ -281,36 +568,6 @@
 									</div>
 								</div>
 
-								<!-- <div class="item flex flex-col gap-2">
-									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Faculty</p>
-									<div
-										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
-									>
-										<input
-											bind:this={faculty}
-											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
-											type="text"
-											required
-											placeholder="e.g Engineering"
-										/>
-									</div>
-								</div>
-
-								<div class="item flex flex-col gap-2">
-									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Department</p>
-									<div
-										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
-									>
-										<input
-											bind:this={department}
-											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
-											type="text"
-											required
-											placeholder="e.g Computer Science"
-										/>
-									</div>
-								</div> -->
-
 								<div class="item flex flex-col gap-2">
 									<p class="font-orbitron text=[0.8rem] tracking-[1px]">
 										Why do you deserve this scholarship?
@@ -357,18 +614,68 @@
 						</form>
 					</dialog>
 				{:else if item.type === 'link'}
-					<a
-						href={item.link}
-						target="_blank"
-						class="flex-shrink-0"
-						onclick={() =>
-							taskDone.includes(index + 1) ? console.log('done') : addTask(index + 1)}
-					>
+					{#if checkTaskDone(index + 1) && checkTaskConfirmed(index + 1)}
+						<div class="flex gap-1 items-center">
+							<p
+								class="inline-flex items-center justify-center gap-1 rounded-full text-color-1 flex-shrink-0"
+							>
+								Complete! 🎉
+							</p>
+						</div>
+					{:else if checkTaskDone(index + 1) && !checkTaskConfirmed(index + 1)}
 						<button
-							class={`w-[100px] h-[40px] rounded-full bg-color-3 ${taskDone.includes(index + 1) ? 'bg-green-500 text-main' : 'bg-color-3'} flex-shrink-0`}
-							>{taskDone.includes(index + 1) ? 'Done' : 'Start'}
+							disabled={isTaskCheckingLoadingList.includes(index + 1)}
+							onclick={() => validateTask(index + 1)}
+							class={`w-[100px] h-[40px] flex items-center justify-center gap-1 rounded-full bg-[#756c34]  flex-shrink-0`}
+						>
+							Check
+							{#if isTaskCheckingLoadingList.includes(index + 1)}
+								<p class="loading loading-spinner size-3"></p>
+							{:else}
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="size-3"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+									/>
+								</svg>
+							{/if}
 						</button>
-					</a>
+					{:else}
+						<a
+							href={item.link}
+							target="_blank"
+							class="flex-shrink-0"
+							onclick={() => addTask(index + 1)}
+						>
+							<button
+								class="w-[100px] h-[40px] flex items-center justify-center gap-1 rounded-full bg-color-3 flex-shrink-0"
+							>
+								Start
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="size-3"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+									/>
+								</svg>
+							</button>
+						</a>
+					{/if}
 				{/if}
 			</div>
 		{/each}
@@ -381,8 +688,9 @@
 		> of the scholarship.
 	</p>
 	<button
+		disabled={isApplicationFormLoading}
 		class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
-		onclick={submitApplication}
+		onclick={() => submitApplication()}
 		>{#if isApplicationFormLoading}
 			<p class="loading loading-spinner"></p>
 		{:else}
