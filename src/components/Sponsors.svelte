@@ -3,17 +3,17 @@
 		{
 			name: 'Offchain',
 			image: '/images/offchain.webp',
-			link: ''
+			link: 'https://offchain.social/'
 		},
 		{
 			name: 'Core',
 			image: '/images/core.webp',
-			link: ''
+			link: 'https://coredao.org/'
 		},
 		{
 			name: 'QBX',
 			image: '/images/qbx.webp',
-			link: ''
+			link: 'https://qiibeefoundation.org/'
 		}
 	]);
 
@@ -30,6 +30,24 @@
 				link: ''
 			});
 			sponsors.push({
+				name: 'QBX',
+				image: '/images/qbx.webp',
+				link: ''
+			});
+		}, 800);
+
+		setInterval(() => {
+			sponsors.unshift({
+				name: 'Offchain',
+				image: '/images/offchain.webp',
+				link: ''
+			});
+			sponsors.unshift({
+				name: 'Core',
+				image: '/images/core.webp',
+				link: ''
+			});
+			sponsors.unshift({
 				name: 'QBX',
 				image: '/images/qbx.webp',
 				link: ''
