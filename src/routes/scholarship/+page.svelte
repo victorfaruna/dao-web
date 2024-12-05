@@ -161,6 +161,9 @@
 		localStorage.setItem('twitterUsername', twitterUsername);
 		localStorage.setItem('instagramUsername', instagramUsername);
 		modalPopupSocial.close();
+		taskDone.forEach(async (item: any) => {
+			if (!confirmedTasks.includes(item)) await validateTask(item);
+		});
 	};
 
 	const validateTask = async (item: number) => {
