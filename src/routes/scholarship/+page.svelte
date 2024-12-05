@@ -175,24 +175,31 @@
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task failed', 'alert-error');
+							showAlert('Task failed - Check your username', 'alert-error');
 						}
 					} else {
 						modalPopupSocial.showModal();
 					}
 					break;
 				case 2:
-					if (item === 2) {
+					if (twitterUsername && instagramUsername) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
 							isTaskCheckingLoadingList.push(item);
 						}
-						setTimeout(() => {
+						const { data } = await axios.get(
+							'/api/instagram/verify-follow?targetUsername=' + instagramUsername
+						);
+						if (data.followStatus === true) {
 							addConfirmedTask(item);
+							showAlert('Task completed', 'alert-success');
+						} else {
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task completed', 'alert-success');
-						}, 2000);
+							showAlert('Task failed - Check your username', 'alert-error');
+						}
+					} else {
+						modalPopupSocial.showModal();
 					}
 					break;
 				case 3:
@@ -781,17 +788,33 @@
 				{/if}
 			</div>
 		{/each}
+		<div>
+			<button
+				class="text-blue-200 flex items-center gap-1 text-[0.7rem]"
+				onclick={() => clearTasks()}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="size-4 inline"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+					/>
+				</svg>
+				<span>Clear Task Progress</span>
+			</button>
+		</div>
 	</div>
 
-	<p class="text-center text-[0.7rem] mt-20 font-light text-color-1/80">
-		By clicking on the button you confirm to adhere to the <a
-			class="text-color-4 underline"
-			href="/terms-and-conditions">terms and conditions</a
-		> of the scholarship.
-	</p>
 	<button
 		disabled={isApplicationFormLoading}
-		class="w-[70%] md:w-[90%] h-[60px] bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
+		class="w-[70%] md:w-[90%] h-[60px] mt-10 bg-color-3 rounded-3xl font-semibold text-[0.9rem]"
 		onclick={() => submitApplication()}
 		>{#if isApplicationFormLoading}
 			<p class="loading loading-spinner"></p>
@@ -799,4 +822,10 @@
 			Complete 🚀
 		{/if}
 	</button>
+	<p class="text-center text-[0.7rem] font-light text-color-1/80">
+		By clicking on the button you confirm to adhere to the <a
+			class="text-color-4 underline"
+			href="/terms-and-conditions">terms and conditions</a
+		> of the scholarship.
+	</p>
 </div>

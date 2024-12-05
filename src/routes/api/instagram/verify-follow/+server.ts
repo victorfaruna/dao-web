@@ -1,4 +1,4 @@
-import { isFollowing } from '$src/lib/server/twitter.js';
+import { isFollowing } from '$src/lib/server/instagram.js';
 
 export async function GET({ url }) {
 	try {
