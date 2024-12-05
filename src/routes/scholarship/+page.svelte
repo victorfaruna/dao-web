@@ -39,7 +39,7 @@
 			type: 'link',
 			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
-			link: 'https://wa.me/?text=🚀%20Join%20the%20Tech%20Revolution%20with%20JOJI%20DAO!%20🌐%0A%0A🔹%20Discover%20the%20future%20of%20Web3%20%26%20Blockchain%0A🔹%20Attend%20workshops%2C%20meet%20experts%2C%20and%20network%20with%20innovators%0A🔹%20Be%20part%20of%20a%20global%20community%20shaping%20the%20future%0A%0A📅%20Date%3A%2014th December 2024@%0A📍%20Location%3A%20Federal University Oye-Ekiti, Ikole Campus%0A%0A👉%20Swipe%20up%20for%20more%20info%20or%20register%20now!%0A%23JOJIDAO%20%23Web3%20%23TechEvent%20%23Blockchain%20%23Innovation%20%23Future'
+			link: 'https://wa.me/?text=%F0%9F%8C%90%20*JOJI%20DAO%20is%20Here!*%20%F0%9F%9A%80%0A%F0%9F%92%A1%20Empowering%20tech%20%26%20Web3%20enthusiasts.%0A%F0%9F%93%85%20*14th%20Nov%202024*%0A%F0%9F%94%97%20Visit%3A%20[jojidao.com](http%3A%2F%2Fjojidao.com)%0A%0ADon%E2%80%99t%20just%20watch%2C%20*join%20the%20future!*%20%E2%9C%A8%20%23TechMeetsWeb3'
 		},
 		{
 			type: 'action',
@@ -111,9 +111,11 @@
 	};
 
 	function addTask(taskId: number) {
-		taskDone = [...taskDone, taskId];
-		// Save updated array to localStorage
-		localStorage.setItem('taskDone', JSON.stringify(taskDone));
+		if (!taskDone.includes(taskId)) {
+			taskDone = [...taskDone, taskId];
+			// Save updated array to localStorage
+			localStorage.setItem('taskDone', JSON.stringify(taskDone));
+		}
 	}
 
 	function removeTask(taskId: number) {
@@ -123,9 +125,11 @@
 	}
 
 	function addConfirmedTask(taskId: number) {
-		confirmedTasks = [...confirmedTasks, taskId];
-		// Save updated array to localStorage
-		localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
+		if (!confirmedTasks.includes(taskId)) {
+			confirmedTasks = [...confirmedTasks, taskId];
+			// Save updated array to localStorage
+			localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
+		}
 	}
 
 	function removeConfirmedTask(taskId: number) {
@@ -178,25 +182,73 @@
 					}
 					break;
 				case 2:
+					if (item === 2) {
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
+					}
 					break;
 				case 3:
 					if (item === 3) {
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
 				case 4:
 					if (item === 4) {
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
 				case 5:
 					if (item === 5) {
-						addConfirmedTask(item);
-						showAlert('Task completed', 'alert-success');
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
 				case 6:
 					if (item === 6) {
-						addConfirmedTask(item);
-						showAlert('Task completed', 'alert-success');
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
 			}
@@ -208,6 +260,7 @@
 
 	const submitPersonalDetails = async () => {
 		try {
+			addTask(7);
 			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			isPersonalDetailsLoading = true;
 			if ((await checkReppeatedEmail(email)) === true) {
@@ -238,10 +291,7 @@
 			}
 			console.log(faculty, department);
 			console.log('Personal details stored succefully');
-			if (!checkTaskConfirmed(7) && !checkTaskDone(7)) {
-				addTask(7);
-				addConfirmedTask(7);
-			}
+			addConfirmedTask(7);
 			modalPopup.close();
 		} catch (error) {
 			modalPopup.close();
@@ -286,6 +336,13 @@
 	});
 </script>
 
+<svelte:head>
+	<title>JOJI DAO - Apply for scholarship</title>
+	<meta
+		name="description"
+		content="Seize the chance to secure one of 10 exclusive scholarships at the JOJI DAO event!"
+	/>
+</svelte:head>
 <button
 	class="back-btn size-[40px] rounded-full bg-color-1/10 absolute top-5 left-5 z-[2] flex items-center justify-center"
 	aria-label="Back"

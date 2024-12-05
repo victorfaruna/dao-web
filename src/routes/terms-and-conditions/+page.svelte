@@ -1,3 +1,10 @@
+<svelte:head>
+	<title>JOJI DAO - Terms and Conditions</title>
+	<meta
+		name="description"
+		content="Seize the chance to secure one of 10 exclusive scholarships at the JOJI DAO event!"
+	/>
+</svelte:head>
 <button
 	class="back-btn size-[40px] rounded-full bg-color-1/10 absolute top-5 left-5 z-[2] flex items-center justify-center"
 	aria-label="Back"

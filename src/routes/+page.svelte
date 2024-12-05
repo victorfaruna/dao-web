@@ -18,6 +18,13 @@
 	});
 </script>
 
+<svelte:head>
+	<title>JOJI DAO</title>
+	<meta
+		name="description"
+		content="Joji Dao is a community that is built for helping Crypto projects grow in Nigeria by hosting IRL events and online community development."
+	/>
+</svelte:head>
 <Header />
 <main
 	class="w-full h-[calc(100vh+10px)] md:h-auto bg-cover bg-no-repeat px-[10%] md:px-5 relative flex md:flex-col gap-10 md:gap-2 items-center justify-center"
