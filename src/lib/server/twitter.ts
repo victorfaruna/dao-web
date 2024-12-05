@@ -6,7 +6,7 @@ export async function isFollowing(username: any) {
 		url: 'https://twitter241.p.rapidapi.com/followers-ids',
 		params: {
 			username: 'JOJI_INT',
-			count: '500'
+			count: '5000'
 		},
 		headers: {
 			'x-rapidapi-key': '30e3972519mshf09e59ca5b3eebdp1350c4jsn0ea75975d5ab',

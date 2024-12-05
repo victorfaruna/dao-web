@@ -7,12 +7,6 @@
 	const TASKDATA = [
 		{
 			type: 'link',
-			icon: '/images/instagram.svg',
-			title: 'Follow Us On Instagram',
-			link: 'https://www.instagram.com/joji_int/'
-		},
-		{
-			type: 'link',
 			icon: '/images/x.svg',
 			title: 'Follow Us On X',
 			link: 'https://www.x.com/JOJI_INT/'
@@ -20,14 +14,20 @@
 		{
 			type: 'link',
 			icon: '/images/instagram.svg',
-			title: 'Like & Share Our Post',
-			link: 'https://www.instagram.com/jojidao/'
+			title: 'Follow Us On Instagram',
+			link: 'https://www.instagram.com/joji_int/'
 		},
 		{
 			type: 'link',
 			icon: '/images/x.svg',
 			title: 'Like, Comment & Retweet Our Post',
 			link: 'https://www.x.com/'
+		},
+		{
+			type: 'link',
+			icon: '/images/instagram.svg',
+			title: 'Like & Share Our Post',
+			link: 'https://www.instagram.com/jojidao/'
 		},
 		{
 			type: 'link',
@@ -157,8 +157,6 @@
 		try {
 			switch (item) {
 				case 1:
-					break;
-				case 2:
 					if (twitterUsername && instagramUsername) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
 							isTaskCheckingLoadingList.push(item);
@@ -173,11 +171,13 @@
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task not completed', 'alert-error');
+							showAlert('Task failed', 'alert-error');
 						}
 					} else {
 						modalPopupSocial.showModal();
 					}
+					break;
+				case 2:
 					break;
 				case 3:
 					if (item === 3) {
@@ -189,6 +189,8 @@
 					break;
 				case 5:
 					if (item === 5) {
+						addConfirmedTask(item);
+						showAlert('Task completed', 'alert-success');
 					}
 					break;
 				case 6:
@@ -200,7 +202,7 @@
 			}
 		} catch (error) {
 			isTaskCheckingLoadingList = [];
-			showAlert('An error occured', 'alert-error');
+			showAlert('Task Failed', 'alert-error');
 		}
 	};
 
