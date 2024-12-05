@@ -141,14 +141,10 @@
 	function clearTasks() {
 		taskDone = [];
 		confirmedTasks = [];
-		instagramUsername = '';
-		twitterUsername = '';
 		userData = [];
 		// Save updated array to localStorage
 		localStorage.setItem('taskDone', JSON.stringify(taskDone));
 		localStorage.setItem('confirmedTasks', JSON.stringify(confirmedTasks));
-		localStorage.setItem('instagramUsername', JSON.stringify(instagramUsername));
-		localStorage.setItem('twitterUsername', JSON.stringify(twitterUsername));
 		localStorage.setItem('userData', JSON.stringify(userData));
 	}
 	let modalPopup: any = $state();
@@ -387,7 +383,7 @@
 		J<img src="/images/dao.svg" class="w-[50px] inline" alt="" />ji
 	</p>
 	<p class="text-center font-orbitron text-[1rem] text-color-1/90 leading-none tracking-[1px]">
-		🎓 Scholarships 🎓
+		🎓 Scholarship Quest 🎓
 	</p>
 	<p class="text-center text-[0.7rem] text-color-1/50 font-poppins">
 		Seize the chance to secure one of 10 exclusive scholarships at the JOJI DAO event! Engage with
