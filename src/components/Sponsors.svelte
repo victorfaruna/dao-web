@@ -56,15 +56,8 @@
 	});
 
 	let scrollContainer: any;
-	let scrollAmount = 0;
 	function autoScroll() {
-		scrollContainer.scrollLeft += 2; // Adjust this value for speed
-		scrollAmount += 1;
-		// Reset scroll when it reaches the end
-		if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-			scrollContainer.scrollLeft = 0;
-			scrollAmount = 0;
-		}
+		scrollContainer.scrollLeft += 10;
 		requestAnimationFrame(autoScroll); // Smooth looping
 	}
 	$effect(() => {

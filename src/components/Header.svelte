@@ -3,11 +3,6 @@
 	import Logo from '$components/Logo.svelte';
 	import { onMount } from 'svelte';
 	let isDrawerActive = $state(false);
-	onMount(() => {
-		if (isDrawerActive) {
-			document.body.style.overflow = 'hidden';
-		}
-	});
 </script>
 
 <section
