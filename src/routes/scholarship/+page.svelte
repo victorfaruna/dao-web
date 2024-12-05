@@ -27,7 +27,7 @@
 			type: 'link',
 			icon: '/images/instagram.svg',
 			title: 'Like & Share Our Post',
-			link: 'https://www.instagram.com/jojidao/'
+			link: 'https://www.instagram.com/'
 		},
 		{
 			type: 'link',
@@ -39,7 +39,7 @@
 			type: 'link',
 			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
-			link: 'https://wa.me/?text=%F0%9F%8C%90%20*JOJI%20DAO%20is%20Here!*%20%F0%9F%9A%80%0A%F0%9F%92%A1%20Empowering%20tech%20%26%20Web3%20enthusiasts.%0A%F0%9F%93%85%20*14th%20Nov%202024*%0A%F0%9F%94%97%20Visit%3A%20[jojidao.com](http%3A%2F%2Fjojidao.com)%0A%0ADon%E2%80%99t%20just%20watch%2C%20*join%20the%20future!*%20%E2%9C%A8%20%23TechMeetsWeb3'
+			link: 'https://wa.me/?text=Stand%20a%20chance%20to%20win%20a%20scholarship%20slot%20from%20JOJI%20DAO%20-%20The%20biggest%20blockchain%20community%20in%20Ekiti%20-%20hosting%20the%20biggest%20blockchain%20event%20on%2014th%20December.%0AVisit%20Now%3A%20www.jojidao.com'
 		},
 		{
 			type: 'action',
@@ -416,6 +416,7 @@
 						d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
 					/>
 				</svg>
+				Edit
 			{:else}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -431,6 +432,7 @@
 						d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
 					/>
 				</svg>
+				Add
 			{/if}
 			Social Media Details
 		</button>
