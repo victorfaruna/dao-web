@@ -33,8 +33,8 @@
 			<li class="relative active"><a href="/">Home</a></li>
 			<li class="relative"><a href="#about">About</a></li>
 			<li class="relative"><a href="#overview">Overview</a></li>
+			<li class="relative"><a href="#sponsors">Sponsors</a></li>
 			<li class="relative"><a href="/scholarship">Scholarships</a></li>
-			<li class="relative"><a href="/sponsors">Sponsors</a></li>
 		</ul>
 	</nav>
 

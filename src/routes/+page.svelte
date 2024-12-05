@@ -7,6 +7,7 @@
 	import Overview from '$src/components/Overview.svelte';
 	import { goto } from '$app/navigation';
 	import gsap from 'gsap';
+	import Sponsors from '$src/components/Sponsors.svelte';
 	//
 	$effect(() => {
 		gsap.to('.kuk1', {
@@ -132,6 +133,7 @@
 <About />
 <Overview />
 <Purpose />
+<Sponsors />
 <Footer />
 
 <style>
