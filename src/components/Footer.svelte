@@ -59,8 +59,8 @@
 				</a>
 				<br />
 				<br />
-				<a href="//t.me/JOJIDAO" target="_blank" class="flex gap-1"
-					><svg
+				<a href="//t.me/JOJIDAO" target="_blank" class="flex gap-1">
+					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
 						height="16"
