@@ -1,12 +1,21 @@
-<script>
+<script lang="ts">
 	// your script goes here
 	import Logo from '$components/Logo.svelte';
 	import { onMount } from 'svelte';
+	// Function to disable scrolling
+
 	let isDrawerActive = $state(false);
+	const toggleBodyScroll = (disable: boolean) => {
+		document.body.style.overflow = disable ? 'hidden' : '';
+	};
+
+	$effect(() => {
+		toggleBodyScroll(isDrawerActive);
+	});
 </script>
 
 <section
-	class={`drawer-cont w-screen h-screen bg-[#fdfff5] absolute z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-300vw]'}`}
+	class={`drawer-cont w-screen h-screen bg-[#fdfff5] ${isDrawerActive ? 'fixed' : 'absolute'} z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-300vw]'}`}
 >
 	<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
 		<li class="relative active"><a href="/">Home</a></li>
@@ -18,7 +27,9 @@
 </section>
 
 <header
-	class="w-full h-[100px] flex items-center justify-between absolute z-[4] top-0 px-[10%] md:px-7"
+	class={`w-full h-[100px] flex items-center justify-between ${
+		isDrawerActive ? 'fixed' : 'absolute'
+	} z-[4] top-0 px-[10%] md:px-7`}
 >
 	<Logo {isDrawerActive} />
 	<nav
