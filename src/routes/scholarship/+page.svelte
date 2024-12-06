@@ -15,13 +15,13 @@
 			type: 'link',
 			icon: '/images/instagram.svg',
 			title: 'Follow Us On Instagram',
-			link: 'https://www.instagram.com/joji_int/'
+			link: 'https://www.instagram.com/p/DDOx_6EIIJS/?igsh=Y3RzbTdkZHU3ODNr'
 		},
 		{
 			type: 'link',
 			icon: '/images/x.svg',
 			title: 'Like, Comment & Retweet Our Post',
-			link: 'https://www.x.com/'
+			link: 'https://x.com/JOJI_INT/status/1864976697239503283?t=IagHIFvwTq5oyBjbgbvlYA&s=19'
 		},
 		{
 			type: 'link',
