@@ -17,8 +17,8 @@
 <section
 	class={`drawer-cont w-screen h-screen bg-[#fdfff5] ${isDrawerActive ? 'fixed' : 'absolute'} z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-300vw]'}`}
 >
-	<div class="rest w-full h-screen flex flex-col items-center justify-center">
-		<img src="/images/undraw_bitcoin_2.svg" class="w-[140px]" alt="" />
+	<div class="rest w-full h-screen flex gap-4 flex-col items-center justify-center">
+		<img src="/images/undraw_bitcoin_2.svg" class="w-[85%]" alt="" />
 	</div>
 </section>
 

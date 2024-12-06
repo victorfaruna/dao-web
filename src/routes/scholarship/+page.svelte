@@ -160,8 +160,10 @@
 	let isApplicationFormLoading = $state(false);
 
 	const saveSocialDetails = () => {
-		localStorage.setItem('twitterUsername', removeAtSymbol(twitterUsername));
-		localStorage.setItem('instagramUsername', removeAtSymbol(instagramUsername));
+		instagramUsername = removeAtSymbol(instagramUsername);
+		twitterUsername = removeAtSymbol(twitterUsername);
+		localStorage.setItem('twitterUsername', twitterUsername);
+		localStorage.setItem('instagramUsername', instagramUsername);
 		modalPopupSocial.close();
 		taskDone.forEach(async (item: any) => {
 			if (!confirmedTasks.includes(item)) await validateTask(item);
@@ -403,7 +405,7 @@
 
 	<div class="w-full mt-20 rounded-3xl bg-color-1/10 p-5 flex flex-col gap-7">
 		<button
-			class="text-blue-200 flex items-center gap-1 text-[0.7rem]"
+			class="text-blue-200 flex items-center gap-1 text-[0.7rem] border-none outline-none"
 			onclick={() => modalPopupSocial.showModal()}
 		>
 			{#if twitterUsername && instagramUsername}
