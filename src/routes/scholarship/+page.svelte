@@ -80,8 +80,16 @@
 		proposal: proposal
 	});
 
+	function removeAtSymbol(str: string) {
+		if (str.startsWith('@')) {
+			return str.slice(1);
+		}
+		return str;
+	}
 	$effect(() => {
 		matric = matric.toUpperCase();
+		twitterUsername = removeAtSymbol(twitterUsername);
+		instagramUsername = removeAtSymbol(instagramUsername);
 	});
 
 	let taskDone: any = $state(

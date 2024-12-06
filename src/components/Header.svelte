@@ -17,13 +17,9 @@
 <section
 	class={`drawer-cont w-screen h-screen bg-[#fdfff5] ${isDrawerActive ? 'fixed' : 'absolute'} z-[3] transition-all duration-[0.3s] ease-out ${isDrawerActive ? 'translate-x-0' : 'translate-x-[-300vw]'}`}
 >
-	<ul class="flex items-center gap-8 text-[11px] text-color-1/90">
-		<li class="relative active"><a href="/">Home</a></li>
-		<li class="relative"><a href="#about">About</a></li>
-		<li class="relative"><a href="#overview">Overview</a></li>
-		<li class="relative"><a href="/scholarship">Scholarships</a></li>
-		<li class="relative"><a href="/sponsors">Sponsors</a></li>
-	</ul>
+	<div class="rest w-full h-screen flex flex-col items-center justify-center">
+		<img src="/images/undraw_bitcoin_2.svg" class="w-[140px]" alt="" />
+	</div>
 </section>
 
 <header
