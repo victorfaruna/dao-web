@@ -88,8 +88,6 @@
 	}
 	$effect(() => {
 		matric = matric.toUpperCase();
-		twitterUsername = removeAtSymbol(twitterUsername);
-		instagramUsername = removeAtSymbol(instagramUsername);
 	});
 
 	let taskDone: any = $state(
@@ -162,8 +160,8 @@
 	let isApplicationFormLoading = $state(false);
 
 	const saveSocialDetails = () => {
-		localStorage.setItem('twitterUsername', twitterUsername);
-		localStorage.setItem('instagramUsername', instagramUsername);
+		localStorage.setItem('twitterUsername', removeAtSymbol(twitterUsername));
+		localStorage.setItem('instagramUsername', removeAtSymbol(instagramUsername));
 		modalPopupSocial.close();
 		taskDone.forEach(async (item: any) => {
 			if (!confirmedTasks.includes(item)) await validateTask(item);
