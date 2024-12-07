@@ -2,21 +2,26 @@ import axios from 'axios';
 
 export async function isFollowing(username: any) {
 	const options = {
-		method: 'GET',
-		url: 'https://instagram-scraper-api2.p.rapidapi.com/v1/following',
-		params: {
-			username_or_id_or_url: username,
-			amount: '1000'
-		},
+		method: 'POST',
+		url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/user/get_followers',
 		headers: {
 			'x-rapidapi-key': '30e3972519mshf09e59ca5b3eebdp1350c4jsn0ea75975d5ab',
-			'x-rapidapi-host': 'instagram-scraper-api2.p.rapidapi.com'
+			'x-rapidapi-host': 'rocketapi-for-instagram.p.rapidapi.com',
+			'Content-Type': 'application/json'
+		},
+		data: {
+			id: 58026151446,
+			count: 12,
+			max_id: null
 		}
 	};
 
 	try {
 		const { data } = await axios.request(options);
-		if (data?.data?.items && data.data.items.some((item: any) => item.username === 'joji_int')) {
+		if (
+			data.response.body.users &&
+			data.response.body.users.some((item: any) => item.username === username)
+		) {
 			return true;
 		}
 		return false;
@@ -26,25 +31,27 @@ export async function isFollowing(username: any) {
 }
 
 export async function hasEngaged(username: any) {
-	const options = {
-		method: 'GET',
-		url: `https://instagram-scraper-api2.p.rapidapi.com/v1/likes?code_or_id_or_url=DDOx_6EIIJS`,
+	const likesOptions = {
+		method: 'POST',
+		url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/media/get_likes',
 		headers: {
 			'x-rapidapi-key': '30e3972519mshf09e59ca5b3eebdp1350c4jsn0ea75975d5ab',
-			'x-rapidapi-host': 'instagram-scraper-api2.p.rapidapi.com'
+			'x-rapidapi-host': 'rocketapi-for-instagram.p.rapidapi.com',
+			'Content-Type': 'application/json'
+		},
+		data: {
+			shortcode: 'DDOx_6EIIJS',
+			count: 12,
+			max_id: null
 		}
 	};
 
 	try {
-		const request = await fetch(options.url, {
-			method: options.method,
-			headers: options.headers,
-			cache: 'no-store'
-		});
-
-		const data = await request.json();
-		console.log(data);
-		if (data?.data?.items && data.data.items.some((item: any) => item.username === username)) {
+		const { data } = await axios.request(likesOptions);
+		if (
+			data.response.body.users &&
+			data.response.body.users.some((item: any) => item.username === username)
+		) {
 			return true;
 		}
 		return false;
