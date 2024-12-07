@@ -26,7 +26,7 @@
 </script>
 
 <div
-	class={`my-20 px-5 ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[20px]'}`}
+	class={`my-20 px-2 ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[20px]'}`}
 	id="sponsors"
 	use:inview={options}
 	oninview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
