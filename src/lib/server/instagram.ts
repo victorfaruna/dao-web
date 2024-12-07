@@ -28,7 +28,7 @@ export async function isFollowing(username: any) {
 export async function hasEngaged(username: any) {
 	const options = {
 		method: 'GET',
-		url: `https://instagram-scraper-api2.p.rapidapi.com/v1/likes?code_or_id_or_url=DDOx_6EIIJS&t=eee&cb=${Date.now()}`,
+		url: `https://instagram-scraper-api2.p.rapidapi.com/v1/likes?code_or_id_or_url=DDOx_6EIIJS`,
 		headers: {
 			'x-rapidapi-key': '30e3972519mshf09e59ca5b3eebdp1350c4jsn0ea75975d5ab',
 			'x-rapidapi-host': 'instagram-scraper-api2.p.rapidapi.com'
@@ -43,10 +43,11 @@ export async function hasEngaged(username: any) {
 		});
 
 		const data = await request.json();
+		console.log(data);
 		if (data?.data?.items && data.data.items.some((item: any) => item.username === username)) {
 			return true;
 		}
-		return true;
+		return false;
 	} catch (error) {
 		console.error(error);
 	}
