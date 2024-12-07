@@ -15,7 +15,7 @@
 			type: 'link',
 			icon: '/images/instagram.svg',
 			title: 'Follow Us On Instagram',
-			link: 'https://www.instagram.com/p/DDOx_6EIIJS/?igsh=Y3RzbTdkZHU3ODNr'
+			link: 'https://www.instagram.com/joji_int'
 		},
 		{
 			type: 'link',
@@ -27,7 +27,7 @@
 			type: 'link',
 			icon: '/images/instagram.svg',
 			title: 'Like & Share Our Post',
-			link: 'https://www.instagram.com/'
+			link: 'https://www.instagram.com/p/DDOx_6EIIJS/?igsh=Y3RzbTdkZHU3ODNr'
 		},
 		{
 			type: 'link',
@@ -236,17 +236,24 @@
 					}
 					break;
 				case 4:
-					if (item === 4) {
+					if (twitterUsername && instagramUsername) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
 							isTaskCheckingLoadingList.push(item);
 						}
-						setTimeout(() => {
+						const { data } = await axios.get(
+							'/api/instagram/verify-engagement?targetUsername=' + instagramUsername
+						);
+						if (data.engagementStatus === true) {
 							addConfirmedTask(item);
+							showAlert('Task completed', 'alert-success');
+						} else {
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task completed', 'alert-success');
-						}, 2000);
+							showAlert('Task failed - Check username & confirm post engagement', 'alert-error');
+						}
+					} else {
+						modalPopupSocial.showModal();
 					}
 					break;
 				case 5:
