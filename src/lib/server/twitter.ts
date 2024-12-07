@@ -44,5 +44,3 @@ export async function getUserId(username: any) {
 		console.error(error);
 	}
 }
-
-export async function hasEngaged() {}
