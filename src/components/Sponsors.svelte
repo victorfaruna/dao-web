@@ -24,7 +24,7 @@
 		},
 		{
 			name: 'Gimme',
-			image: '/images/gimme2.png',
+			image: '/images/gimme2.webp',
 			link: 'https://gimme.finance/'
 		}
 	]);
