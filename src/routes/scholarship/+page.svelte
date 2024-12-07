@@ -37,6 +37,12 @@
 		},
 		{
 			type: 'link',
+			icon: '/images/telegram.webp',
+			title: 'Join Our Telegram Group',
+			link: '//t.me/JOJIDAO'
+		},
+		{
+			type: 'link',
 			icon: '/images/whatsapp.png',
 			title: 'Share on Whatsapp Status',
 			link: 'https://wa.me/?text=Stand%20a%20chance%20to%20win%20a%20scholarship%20slot%20from%20JOJI%20DAO%20-%20The%20biggest%20blockchain%20community%20in%20Ekiti%20-%20hosting%20the%20biggest%20blockchain%20event%20on%2014th%20December.%0AVisit%20Now%3A%20www.jojidao.com'
@@ -271,6 +277,20 @@
 						}, 2000);
 					}
 					break;
+				case 7:
+					if (item === 7) {
+						if (!isTaskCheckingLoadingList.includes(item)) {
+							isTaskCheckingLoadingList.push(item);
+						}
+						setTimeout(() => {
+							addConfirmedTask(item);
+							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+								(item: any) => item !== item
+							);
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
+					}
+					break;
 			}
 		} catch (error) {
 			isTaskCheckingLoadingList = [];
@@ -280,19 +300,19 @@
 
 	const submitPersonalDetails = async () => {
 		try {
-			addTask(7);
+			addTask(8);
 			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			isPersonalDetailsLoading = true;
 			if ((await checkReppeatedEmail(email)) === true) {
-				removeTask(7);
-				removeConfirmedTask(7);
+				removeTask(8);
+				removeConfirmedTask(8);
 				modalPopup.close();
 				showAlert('Email address is already registered', 'alert-error');
 				return;
 			}
 			if ((await checkReppeatedMatric(matric)) === true) {
-				removeTask(7);
-				removeConfirmedTask(7);
+				removeTask(8);
+				removeConfirmedTask(8);
 				modalPopup.close();
 				showAlert('Matric number already registered!', 'alert-error');
 				return;
@@ -300,8 +320,8 @@
 
 			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
-				removeTask(7);
-				removeConfirmedTask(7);
+				removeTask(8);
+				removeConfirmedTask(8);
 				modalPopup.close();
 				showAlert('Invalid Matric Number', 'alert-error');
 				return;
@@ -311,7 +331,7 @@
 			}
 			console.log(faculty, department);
 			console.log('Personal details stored succefully');
-			addConfirmedTask(7);
+			addConfirmedTask(8);
 			modalPopup.close();
 		} catch (error) {
 			modalPopup.close();
