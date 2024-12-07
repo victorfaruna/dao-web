@@ -31,16 +31,13 @@
 	use:inview={options}
 	oninview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
 >
-	<p class="text-[2.3rem] md:text-[1.3rem] text-center font-sora font-semibold mb-10">
-		Partners & Sponsors 🤝
-	</p>
+	<p class="text-[2.3rem] md:text-[2rem] text-center font-sora font-semibold mb-2">Our Partners</p>
 
 	<div class="item-conatiner w-full flex flex-wrap gap-4 justify-center">
 		{#each sponsors as sponsor}
 			<div
-				class="item w-[350px] md:w-[95%] h-[170px] rounded-3xl border border-color-1/20 bg-main/10 p-4 flex flex-col justify-center items-center"
+				class="item w-[350px] md:w-[120px] rounded-xl border border-color-1/20 bg-main/10 py-4 px-8 flex flex-col justify-center items-center"
 			>
-				<p>{sponsor.name}</p>
 				<a href={sponsor.link} target="_blank">
 					<img class="w-[150px]" src={sponsor.image} alt="" />
 				</a>
