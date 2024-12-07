@@ -26,22 +26,48 @@
 </script>
 
 <div
-	class={`my-20 px-5 ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[100px]'}`}
+	class={`my-20 px-5 ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[20px]'}`}
 	id="sponsors"
 	use:inview={options}
 	oninview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
 >
-	<p class="text-[2.3rem] md:text-[2rem] text-center font-sora font-semibold mb-2">Our Partners</p>
+	<p class="text-[2.5rem] md:text-[2rem] text-center font-sora font-semibold mb-2">Our Partners</p>
 
 	<div class="item-conatiner w-full flex flex-wrap gap-4 justify-center">
 		{#each sponsors as sponsor}
 			<div
-				class="item w-[350px] md:w-[120px] rounded-xl border border-color-1/20 bg-main/10 py-4 px-8 flex flex-col justify-center items-center"
+				class="sponsor-item size-[220px] md:size-[100px] relative mask mask-hexagon-2 p-[0.1rem] bg-color-3 flex items-center justify-center"
 			>
-				<a href={sponsor.link} target="_blank">
-					<img class="w-[150px]" src={sponsor.image} alt="" />
-				</a>
+				<div
+					class="size-full inner mask mask-hexagon-2 bg-main flex flex-col justify-center items-center"
+				>
+					<a href={sponsor.link} target="_blank">
+						<img class="w-[120px] md:size-[70px] object-contain" src={sponsor.image} alt="" />
+					</a>
+				</div>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	.sponsor-item::before {
+		@apply mask mask-circle animate-spin;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: linear-gradient(
+			180deg,
+			transparent,
+			transparent,
+			transparent,
+			transparent,
+			rgb(var(--color-3)),
+			rgb(var(--color-4))
+		);
+	}
+</style>
