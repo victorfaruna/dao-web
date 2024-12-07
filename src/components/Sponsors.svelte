@@ -36,13 +36,13 @@
 	<div class="item-conatiner w-full flex flex-wrap gap-4 justify-center">
 		{#each sponsors as sponsor}
 			<div
-				class="sponsor-item size-[220px] md:size-[100px] relative mask mask-hexagon-2 p-[0.1rem] bg-color-3 flex items-center justify-center"
+				class="sponsor-item size-[220px] md:size-[100px] relative mask mask-hexagon-2 p-[0.1rem] flex items-center justify-center"
 			>
 				<div
 					class="size-full inner mask mask-hexagon-2 bg-main flex flex-col justify-center items-center"
 				>
 					<a href={sponsor.link} target="_blank">
-						<img class="w-[120px] md:size-[70px] object-contain" src={sponsor.image} alt="" />
+						<img class="w-[150px] md:size-[70px] object-contain" src={sponsor.image} alt="" />
 					</a>
 				</div>
 			</div>

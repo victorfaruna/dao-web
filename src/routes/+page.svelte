@@ -138,7 +138,7 @@
 
 <style>
 	.graphic::before {
-		@apply mask mask-circle animate-spin;
+		@apply animate-spin;
 		content: '';
 		position: absolute;
 		top: 0;
