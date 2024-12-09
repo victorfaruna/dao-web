@@ -1,11 +1,4 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
-	import type { ObserverEventDetails, Options } from 'svelte-inview';
-	let isInView: any = $state();
-	const options: Options = {
-		unobserveOnEnter: false
-	};
-
 	const sponsors = $state([
 		{
 			name: 'Offchain',
@@ -30,12 +23,7 @@
 	]);
 </script>
 
-<div
-	class={`my-20 px-2 ${isInView ? 'translate-y-0 transition-all duration-[1s]' : 'translate-y-[20px]'}`}
-	id="sponsors"
-	use:inview={options}
-	oninview_change={({ detail }: CustomEvent<ObserverEventDetails>) => (isInView = detail.inView)}
->
+<div class={`my-20 px-2 `} id="sponsors">
 	<p class="text-[2.5rem] md:text-[2rem] text-center font-sora font-semibold mb-2">Our Partners</p>
 
 	<div class="item-conatiner w-full flex flex-wrap gap-4 justify-center">
