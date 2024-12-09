@@ -327,11 +327,8 @@
 
 			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
-				removeTask(8);
-				removeConfirmedTask(8);
-				modalPopup.close();
-				showAlert('Invalid Matric Number', 'alert-error');
-				return;
+				faculty = '';
+				department = '';
 			} else {
 				faculty = studentInfo.faculty;
 				department = studentInfo.department;
@@ -705,7 +702,9 @@
 								</div>
 
 								<div class="item flex flex-col gap-2">
-									<p class="font-orbitron text=[0.8rem] tracking-[1px]">Matric NO</p>
+									<p class="font-orbitron text=[0.8rem] tracking-[1px]">
+										Matric NO / Jamb Reg Number
+									</p>
 									<div
 										class="input-control w-full h-[50px] rounded-2xl border border-color-1/50 overflow-hidden"
 									>
@@ -714,7 +713,7 @@
 											class="size-full bg-transparent outline-none border-none text-[0.7rem]"
 											type="text"
 											required
-											placeholder="e.g EEE/2022/1024"
+											placeholder="e.g ABC/2022/1050"
 										/>
 									</div>
 								</div>
