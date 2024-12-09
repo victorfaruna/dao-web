@@ -114,7 +114,13 @@
 		</div>
 	</div>
 
-	<div class="bottom"></div>
+	<div class="bottom text-center mb-10">
+		© 2024 JOJI DAO | Developed by <a
+			href="https://victorfaruna.vercel.app/"
+			target="_blank"
+			class="underline">Victor Faruna</a
+		>
+	</div>
 </footer>
 
 <style>

@@ -37,11 +37,9 @@
 	<p class="mb-10">
 		<span>1.1 Acceptance of Terms:</span>
 		By accessing the JOJI DAO website, you agree to be bound by these TOS, which may be updated by us
-		from time to time without notice. 1.2 Eligibility: This website is intended for individuals who are
-		at least 18 years old. By using this website, you represent and warrant that you meet this age requirement.
-		1.3 Modification of Terms: We reserve the right to modify these TOS at any time. Changes will be
-		effective immediately upon posting to the website. Your continued use of the website constitutes
-		acceptance of any changes.
+		from time to time without notice.1.2 Modification of Terms: We reserve the right to modify these
+		TOS at any time. Changes will be effective immediately upon posting to the website. Your continued
+		use of the website constitutes acceptance of any changes.
 	</p>
 
 	<p class="mb-2 text-[1rem] font-bold">2. Use of the Website</p>
