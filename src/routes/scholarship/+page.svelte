@@ -327,8 +327,7 @@
 
 			const studentInfo: any = getStudentInfo(matric);
 			if (studentInfo === 'nothing-found') {
-				faculty = '';
-				department = '';
+				return;
 			} else {
 				faculty = studentInfo.faculty;
 				department = studentInfo.department;
