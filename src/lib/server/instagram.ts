@@ -11,7 +11,7 @@ export async function isFollowing(username: any) {
 		},
 		data: {
 			id: 58026151446,
-			count: 1000,
+			count: 99,
 			max_id: null
 		}
 	};
