@@ -11,7 +11,7 @@ export async function isFollowing(username: any) {
 		},
 		data: {
 			id: 58026151446,
-			count: 12,
+			count: 1000,
 			max_id: null
 		}
 	};
@@ -41,7 +41,7 @@ export async function hasEngaged(username: any) {
 		},
 		data: {
 			shortcode: 'DDOx_6EIIJS',
-			count: 12,
+			count: 1000,
 			max_id: null
 		}
 	};
