@@ -23,4 +23,5 @@
 		/>
 	</svg>
 </div>
+<Analytics />
 {@render children()}
