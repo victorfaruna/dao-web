@@ -2,6 +2,8 @@
 	import '../app.css';
 	let { children } = $props();
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+	injectAnalytics();
 </script>
 
 <div
@@ -23,5 +25,4 @@
 		/>
 	</svg>
 </div>
-<Analytics />
 {@render children()}
