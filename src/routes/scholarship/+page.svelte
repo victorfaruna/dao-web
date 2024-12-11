@@ -308,7 +308,6 @@
 	const submitPersonalDetails = async () => {
 		try {
 			addTask(8);
-			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			isPersonalDetailsLoading = true;
 			if ((await checkReppeatedEmail(email)) === true) {
 				removeTask(8);
@@ -329,8 +328,11 @@
 			if (studentInfo !== 'nothing-found') {
 				faculty = studentInfo.faculty;
 				department = studentInfo.department;
+			} else {
+				faculty = '';
+				department = '';
 			}
-			console.log(faculty, department);
+			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			console.log('Personal details stored succefully');
 			addConfirmedTask(8);
 			modalPopup.close();

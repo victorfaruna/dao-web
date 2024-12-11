@@ -4,16 +4,19 @@
 			{ "name": "Agricultural Economics and Extension", "abbreviation": "AEE" },
 			{ "name": "Animal Production and Health", "abbreviation": "APH" },
 			{ "name": "Crop Science and Horticulture", "abbreviation": "CSH" },
-			{ "name": "Fisheries and Aquaculture", "abbreviation": "FA" },
+			{ "name": "Fisheries and Aquaculture", "abbreviation": "FAQ" },
 			{ "name": "Food Science and Technology", "abbreviation": "FST" },
-			{ "name": "Soil Science and Land Resources Management", "abbreviation": "SSL" },
-			{ "name": "Water Resources Management and Agro-Meteorology", "abbreviation": "WAM" }
+			{ "name": "Hospitality and Tourism Management", "abbreviation": "HTM" },
+			{ "name": "Soil Science and Land Resources Management", "abbreviation": "SLM" },
+			{ "name": "Water Resources Management and Agro-Meteorology", "abbreviation": "WMA" }
 		],
 		"Arts": [
 			{ "name": "English and Literary Studies", "abbreviation": "ELS" },
 			{ "name": "History and International Studies", "abbreviation": "HIS" },
-			{ "name": "Linguistics and Languages", "abbreviation": "LL" },
-			{ "name": "Theatre and Media Arts", "abbreviation": "TMA" }
+			{ "name": "Linguistics and Languages", "abbreviation": "LIN" },
+			{ "name": "Theatre and Media Arts", "abbreviation": "TMA" },
+			{ "name": "Philosophy", "abbreviation": "PHI" },
+			{ "name": "Religious Studies", "abbreviation": "RES" }
 		],
 		"Education": [
 			{ "name": "Agricultural Education", "abbreviation": "AED" },
