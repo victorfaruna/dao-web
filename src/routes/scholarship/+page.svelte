@@ -325,10 +325,8 @@
 				return;
 			}
 
-			const studentInfo: any = getStudentInfo(matric);
-			if (studentInfo === 'nothing-found') {
-				return;
-			} else {
+			const studentInfo: any = await getStudentInfo(matric);
+			if (studentInfo !== 'nothing-found') {
 				faculty = studentInfo.faculty;
 				department = studentInfo.department;
 			}

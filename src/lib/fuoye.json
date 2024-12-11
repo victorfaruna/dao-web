@@ -65,6 +65,21 @@
 			{ "name": "Political Science", "abbreviation": "POS" },
 			{ "name": "Psychology", "abbreviation": "PSY" },
 			{ "name": "Sociology", "abbreviation": "SOC" }
+		],
+		"Environmental Design and Management": [
+			{ "name": "Architecture", "abbreviation": "ARC" },
+			{ "name": "Building", "abbreviation": "BLD" },
+			{ "name": "Estate Management", "abbreviation": "ETM" },
+			{ "name": "Quantity Survey", "abbreviation": "QTS" },
+			{ "name": "Surveying and Geoinformatics", "abbreviation": "SVG" },
+			{ "name": "Urban and Regional Planning", "abbreviation": "URP" }
+		],
+		"Basic Medical Sciences": [
+			{ "name": "Anatomy", "abbreviation": "ANA" },
+			{ "name": "Medical Laboratory Science", "abbreviation": "MLS" },
+			{ "name": "Nursing", "abbreviation": "NSC" },
+			{ "name": "Physiology", "abbreviation": "PHS" },
+			{ "name": "Radiology and Radiation Science", "abbreviation": "" }
 		]
 	}
 }
