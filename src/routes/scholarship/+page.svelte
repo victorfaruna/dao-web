@@ -201,26 +201,39 @@
 					}
 					break;
 				case 2:
-					if (twitterUsername && instagramUsername) {
+					if (item === 2) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
 							isTaskCheckingLoadingList.push(item);
 						}
-						const { data } = await axios.get(
-							'/api/instagram/verify-follow?targetUsername=' + instagramUsername
-						);
-						if (data.followStatus === true) {
+						setTimeout(() => {
 							addConfirmedTask(item);
-							showAlert('Task completed', 'alert-success');
-						} else {
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task failed - Check your username', 'alert-error');
-						}
-					} else {
-						modalPopupSocial.showModal();
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
+				// if (twitterUsername && instagramUsername) {
+				// 	if (!isTaskCheckingLoadingList.includes(item)) {
+				// 		isTaskCheckingLoadingList.push(item);
+				// 	}
+				// 	const { data } = await axios.get(
+				// 		'/api/instagram/verify-follow?targetUsername=' + instagramUsername
+				// 	);
+				// 	if (data.followStatus === true) {
+				// 		addConfirmedTask(item);
+				// 		showAlert('Task completed', 'alert-success');
+				// 	} else {
+				// 		isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+				// 			(item: any) => item !== item
+				// 		);
+				// 		showAlert('Task failed - Check your username', 'alert-error');
+				// 	}
+				// } else {
+				// 	modalPopupSocial.showModal();
+				// }
+				// break;
 				case 3:
 					if (item === 3) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
@@ -236,26 +249,39 @@
 					}
 					break;
 				case 4:
-					if (twitterUsername && instagramUsername) {
+					if (item === 4) {
 						if (!isTaskCheckingLoadingList.includes(item)) {
 							isTaskCheckingLoadingList.push(item);
 						}
-						const { data } = await axios.get(
-							'/api/instagram/verify-engagement?targetUsername=' + instagramUsername
-						);
-						if (data.engagementStatus === true) {
+						setTimeout(() => {
 							addConfirmedTask(item);
-							showAlert('Task completed', 'alert-success');
-						} else {
 							isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
 								(item: any) => item !== item
 							);
-							showAlert('Task failed - Check username & confirm post engagement', 'alert-error');
-						}
-					} else {
-						modalPopupSocial.showModal();
+							showAlert('Task completed', 'alert-success');
+						}, 2000);
 					}
 					break;
+				// if (twitterUsername && instagramUsername) {
+				// 	if (!isTaskCheckingLoadingList.includes(item)) {
+				// 		isTaskCheckingLoadingList.push(item);
+				// 	}
+				// 	const { data } = await axios.get(
+				// 		'/api/instagram/verify-engagement?targetUsername=' + instagramUsername
+				// 	);
+				// 	if (data.engagementStatus === true) {
+				// 		addConfirmedTask(item);
+				// 		showAlert('Task completed', 'alert-success');
+				// 	} else {
+				// 		isTaskCheckingLoadingList = isTaskCheckingLoadingList.filter(
+				// 			(item: any) => item !== item
+				// 		);
+				// 		showAlert('Task failed - Check username & confirm post engagement', 'alert-error');
+				// 	}
+				// } else {
+				// 	modalPopupSocial.showModal();
+				// }
+				// break;
 				case 5:
 					if (item === 5) {
 						if (!isTaskCheckingLoadingList.includes(item)) {

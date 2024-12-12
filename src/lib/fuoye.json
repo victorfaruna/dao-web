@@ -1,96 +1,96 @@
 {
 	"faculties": {
 		"Agriculture": [
-			{ "name": "Agricultural Economics and Extension", "abbreviation": "AEE" },
-			{ "name": "Animal Production and Health", "abbreviation": "APH" },
-			{ "name": "Crop Science and Horticulture", "abbreviation": "CSH" },
-			{ "name": "Fisheries and Aquaculture", "abbreviation": "FAQ" },
-			{ "name": "Food Science and Technology", "abbreviation": "FST" },
-			{ "name": "Hospitality and Tourism Management", "abbreviation": "HTM" },
-			{ "name": "Soil Science and Land Resources Management", "abbreviation": "SLM" },
-			{ "name": "Water Resources Management and Agro-Meteorology", "abbreviation": "WMA" }
+			{ "name": "Agricultural Economics and Extension", "course_code": "AEE" },
+			{ "name": "Animal Production and Health", "course_code": "APH" },
+			{ "name": "Crop Science and Horticulture", "course_code": "CSH" },
+			{ "name": "Fisheries and Aquaculture", "course_code": "FAQ" },
+			{ "name": "Food Science and Technology", "course_code": "FST" },
+			{ "name": "Hospitality and Tourism Management", "course_code": "HTM" },
+			{ "name": "Soil Science and Land Resources Management", "course_code": "SLM" },
+			{ "name": "Water Resources Management and Agro-Meteorology", "course_code": "WMA" }
 		],
 		"Arts": [
-			{ "name": "English and Literary Studies", "abbreviation": "ELS" },
-			{ "name": "History and International Studies", "abbreviation": "HIS" },
-			{ "name": "Linguistics and Languages", "abbreviation": "LIN" },
-			{ "name": "Theatre and Media Arts", "abbreviation": "TMA" },
-			{ "name": "Philosophy", "abbreviation": "PHI" },
-			{ "name": "Religious Studies", "abbreviation": "RES" }
+			{ "name": "English and Literary Studies", "course_code": "ELS" },
+			{ "name": "History and International Studies", "course_code": "HIS" },
+			{ "name": "Linguistics and Languages", "course_code": "LIN" },
+			{ "name": "Theatre and Media Arts", "course_code": "TMA" },
+			{ "name": "Philosophy", "course_code": "PHI" },
+			{ "name": "Religious Studies", "course_code": "RES" }
 		],
 
 		"Education": [
-			{ "name": "Adult Education", "abbreviation": "ADE" },
-			{ "name": "English Language Education", "abbreviation": "ELE" },
-			{ "name": "Business Education", "abbreviation": "BED" },
-			{ "name": "Educational Management", "abbreviation": "EDM" },
-			{ "name": "Economics Education", "abbreviation": "" },
-			{ "name": "Guidance and Counseling", "abbreviation": "GCE" },
-			{ "name": "Human Kinetics And Health Education", "abbreviation": "KHE" },
-			{ "name": "Library And Information Science", "abbreviation": "LIS" },
-			{ "name": "Agricultural Education", "abbreviation": "AED" },
-			{ "name": "Biology Education", "abbreviation": "BIO" },
-			{ "name": "Mathematics Education", "abbreviation": "MAE" },
-			{ "name": "Physics Education", "abbreviation": "PHE" },
-			{ "name": "Chemistry Education", "abbreviation": "CHE" },
-			{ "name": "Educational Technology", "abbreviation": "EDT" }
+			{ "name": "Adult Education", "course_code": "ADE" },
+			{ "name": "English Language Education", "course_code": "ELE" },
+			{ "name": "Business Education", "course_code": "BED" },
+			{ "name": "Educational Management", "course_code": "EDM" },
+			{ "name": "Economics Education", "course_code": "" },
+			{ "name": "Guidance and Counseling", "course_code": "GCE" },
+			{ "name": "Human Kinetics And Health Education", "course_code": "KHE" },
+			{ "name": "Library And Information Science", "course_code": "LIS" },
+			{ "name": "Agricultural Education", "course_code": "AED" },
+			{ "name": "Biology Education", "course_code": "BIO" },
+			{ "name": "Mathematics Education", "course_code": "MAE" },
+			{ "name": "Physics Education", "course_code": "PHE" },
+			{ "name": "Chemistry Education", "course_code": "CHE" },
+			{ "name": "Educational Technology", "course_code": "EDT" }
 		],
 		"Engineering": [
-			{ "name": "Agricultural and Bio-Resources Engineering", "abbreviation": "ABE" },
-			{ "name": "Civil Engineering", "abbreviation": "CVE" },
-			{ "name": "Computer Engineering", "abbreviation": "CPE" },
-			{ "name": "Electrical and Electronics Engineering", "abbreviation": "EEE" },
-			{ "name": "Mechanical Engineering", "abbreviation": "MEE" },
-			{ "name": "Mechatronics Engineering", "abbreviation": "MTE" },
-			{ "name": "Materials and Metallurgical Engineering", "abbreviation": "MME" }
+			{ "name": "Agricultural and Bio-Resources Engineering", "course_code": "ABE" },
+			{ "name": "Civil Engineering", "course_code": "CVE" },
+			{ "name": "Computer Engineering", "course_code": "CPE" },
+			{ "name": "Electrical and Electronics Engineering", "course_code": "EEE" },
+			{ "name": "Mechanical Engineering", "course_code": "MEE" },
+			{ "name": "Mechatronics Engineering", "course_code": "MTE" },
+			{ "name": "Materials and Metallurgical Engineering", "course_code": "MME" }
 		],
-		"Law": [{ "name": "Law", "abbreviation": "LAW" }],
+		"Law": [{ "name": "Law", "course_code": "LAW" }],
 		"Management Sciences": [
-			{ "name": "Accounting", "abbreviation": "ACC" },
-			{ "name": "Banking and Finance", "abbreviation": "FIN" },
-			{ "name": "Business Administration", "abbreviation": "BUS" },
-			{ "name": "Public Administration", "abbreviation": "PAD" }
+			{ "name": "Accounting", "course_code": "ACC" },
+			{ "name": "Banking and Finance", "course_code": "FIN" },
+			{ "name": "Business Administration", "course_code": "BUS" },
+			{ "name": "Public Administration", "course_code": "PAD" }
 		],
-		"Pharmacy": [{ "name": "Pharmacy", "abbreviation": "PHARM" }],
+		"Pharmacy": [{ "name": "Pharmacy", "course_code": "PHARM" }],
 		"Sciences": [
-			{ "name": "Animal and Environmental Biology", "abbreviation": "AEB" },
-			{ "name": "Biochemistry", "abbreviation": "BCH" },
-			{ "name": "Computer Science", "abbreviation": "CSC" },
-			{ "name": "Geology", "abbreviation": "GLY" },
-			{ "name": "Geophysics", "abbreviation": "GPY" },
-			{ "name": "Industrial Chemistry", "abbreviation": "ICH" },
-			{ "name": "Chemistry", "abbreviation": "CHM" },
-			{ "name": "Mathematics", "abbreviation": "MTH" },
-			{ "name": "Microbiology", "abbreviation": "MCB" },
-			{ "name": "Physics", "abbreviation": "PHY" },
-			{ "name": "Plant Science and Biotechnology", "abbreviation": "PSB" },
-			{ "name": "Environmental Management and Toxicology", "abbreviation": "EMT" }
+			{ "name": "Animal and Environmental Biology", "course_code": "AEB" },
+			{ "name": "Biochemistry", "course_code": "BCH" },
+			{ "name": "Computer Science", "course_code": "CSC" },
+			{ "name": "Geology", "course_code": "GLY" },
+			{ "name": "Geophysics", "course_code": "GPY" },
+			{ "name": "Industrial Chemistry", "course_code": "ICH" },
+			{ "name": "Chemistry", "course_code": "CHM" },
+			{ "name": "Mathematics", "course_code": "MTH" },
+			{ "name": "Microbiology", "course_code": "MCB" },
+			{ "name": "Physics", "course_code": "PHY" },
+			{ "name": "Plant Science and Biotechnology", "course_code": "PSB" },
+			{ "name": "Environmental Management and Toxicology", "course_code": "EMT" }
 		],
 		"Social Sciences": [
-			{ "name": "Criminology and Security Studies", "abbreviation": "CSS" },
-			{ "name": "Demography and Social Statistics", "abbreviation": "DSS" },
-			{ "name": "Economics and Development Studies", "abbreviation": "EDS" },
-			{ "name": "General Studies", "abbreviation": "GST" },
-			{ "name": "Mass Communication", "abbreviation": "MAC" },
-			{ "name": "Peace and Conflict Resolution", "abbreviation": "PCS" },
-			{ "name": "Political Science", "abbreviation": "POL" },
-			{ "name": "Psychology", "abbreviation": "PSY" },
-			{ "name": "Sociology", "abbreviation": "SOC" }
+			{ "name": "Criminology and Security Studies", "course_code": "CSS" },
+			{ "name": "Demography and Social Statistics", "course_code": "DSS" },
+			{ "name": "Economics and Development Studies", "course_code": "EDS" },
+			{ "name": "General Studies", "course_code": "GST" },
+			{ "name": "Mass Communication", "course_code": "MAC" },
+			{ "name": "Peace and Conflict Resolution", "course_code": "PCS" },
+			{ "name": "Political Science", "course_code": "POL" },
+			{ "name": "Psychology", "course_code": "PSY" },
+			{ "name": "Sociology", "course_code": "SOC" }
 		],
 		"Environmental Design and Management": [
-			{ "name": "Architecture", "abbreviation": "ARC" },
-			{ "name": "Building", "abbreviation": "BLD" },
-			{ "name": "Estate Management", "abbreviation": "ETM" },
-			{ "name": "Quantity Survey", "abbreviation": "QTS" },
-			{ "name": "Surveying and Geoinformatics", "abbreviation": "SVG" },
-			{ "name": "Urban and Regional Planning", "abbreviation": "URP" }
+			{ "name": "Architecture", "course_code": "ARC" },
+			{ "name": "Building", "course_code": "BLD" },
+			{ "name": "Estate Management", "course_code": "ETM" },
+			{ "name": "Quantity Survey", "course_code": "QTS" },
+			{ "name": "Surveying and Geoinformatics", "course_code": "SVG" },
+			{ "name": "Urban and Regional Planning", "course_code": "URP" }
 		],
 		"Basic Medical Sciences": [
-			{ "name": "Anatomy", "abbreviation": "ANA" },
-			{ "name": "Medical Laboratory Science", "abbreviation": "MLS" },
-			{ "name": "Nursing", "abbreviation": "NSC" },
-			{ "name": "Physiology", "abbreviation": "PHS" },
-			{ "name": "Radiology and Radiation Science", "abbreviation": "" }
+			{ "name": "Anatomy", "course_code": "ANA" },
+			{ "name": "Medical Laboratory Science", "course_code": "MLS" },
+			{ "name": "Nursing", "course_code": "NSC" },
+			{ "name": "Physiology", "course_code": "PHS" },
+			{ "name": "Radiology and Radiation Science", "course_code": "" }
 		]
 	}
 }
