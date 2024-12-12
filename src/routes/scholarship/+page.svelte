@@ -328,9 +328,6 @@
 			if (studentInfo !== 'nothing-found') {
 				faculty = studentInfo.faculty;
 				department = studentInfo.department;
-			} else {
-				faculty = '';
-				department = '';
 			}
 			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			console.log('Personal details stored succefully');
