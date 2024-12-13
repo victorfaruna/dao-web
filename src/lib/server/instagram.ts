@@ -5,7 +5,7 @@ export async function isFollowing(username: any) {
 		method: 'POST',
 		url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/user/get_followers',
 		headers: {
-			'x-rapidapi-key': 'aff5f3a285msh302fe6d973fbec4p16c7b8jsne4750235d686',
+			'x-rapidapi-key': 'c85101086fmshb4b2936213c96c9p13d060jsn6968467b310d',
 			'x-rapidapi-host': 'rocketapi-for-instagram.p.rapidapi.com',
 			'Content-Type': 'application/json'
 		},
@@ -35,7 +35,7 @@ export async function hasEngaged(username: any) {
 		method: 'POST',
 		url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/media/get_likes',
 		headers: {
-			'x-rapidapi-key': 'aff5f3a285msh302fe6d973fbec4p16c7b8jsne4750235d686',
+			'x-rapidapi-key': 'c85101086fmshb4b2936213c96c9p13d060jsn6968467b310d',
 			'x-rapidapi-host': 'rocketapi-for-instagram.p.rapidapi.com',
 			'Content-Type': 'application/json'
 		},
