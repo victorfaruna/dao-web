@@ -324,11 +324,9 @@
 				return;
 			}
 
-			const studentInfo: any = await getStudentInfo(matric);
-			if (studentInfo !== 'nothing-found') {
-				faculty = studentInfo.faculty;
-				department = studentInfo.department;
-			}
+			const studentInfo: { faculty: string; department: string } = await getStudentInfo(matric);
+			faculty = studentInfo.faculty;
+			department = studentInfo.department;
 			localStorage.setItem('userData', JSON.stringify(locallyStoredUserData));
 			console.log('Personal details stored succefully');
 			addConfirmedTask(8);

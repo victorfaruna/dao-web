@@ -59,8 +59,8 @@ export async function checkReppeatedMatric(matric: string) {
 export async function getStudentInfo(matric: any) {
 	let abbreviation = matric.split('/')[0];
 	for (const faculty in data.faculties) {
-		const department = await data.faculties[faculty].find(
-			(dept: any) => dept.abbreviation === abbreviation
+		const department = data.faculties[faculty].find(
+			(dept: any) => dept.course_code === abbreviation
 		);
 		if (department) {
 			return {
@@ -69,5 +69,8 @@ export async function getStudentInfo(matric: any) {
 			};
 		}
 	}
-	return 'nothing-found';
+	return {
+		faculty: '',
+		department: ''
+	};
 }
