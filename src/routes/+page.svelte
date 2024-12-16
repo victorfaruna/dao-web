@@ -82,9 +82,9 @@
 				>Prizes & Giveaways 🎁</button
 			> -->
 			<button
-				onclick={() => goto('/scholarship')}
+				onclick={() => window.open('https://t.me/JOJIDAO', '_blank')}
 				class="h-[40px] rounded-full border-[1.5px] border-color-3 overflow-hidden pl-6 text-color-1 flex gap-2 items-center justify-center"
-				>Apply for Scholarship <span
+				>Join the DAO community <span
 					class="size-[40px] rounded-full bg-color-3 flex items-center justify-center"
 				>
 					<svg
